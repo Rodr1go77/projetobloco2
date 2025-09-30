@@ -1,0 +1,198 @@
+{
+    "id": 969716,
+    "date": "30/09/2025",
+    "time": "14:30",
+    "country": {
+        "id": 31,
+        "name": "bulgaria"
+    },
+    "league": {
+        "id": 199,
+        "name": "First League"
+    },
+    "stage": {
+        "id": 13954,
+        "name": "First League",
+        "is_active": false
+    },
+    "teams": {
+        "home": {
+            "id": 3102,
+            "name": "Botev Plovdiv"
+        },
+        "away": {
+            "id": 3595,
+            "name": "Levski Sofia"
+        }
+    },
+    "stadium": {
+        "id": 751,
+        "name": "Stadion Hristo Botev",
+        "city": "Plovdiv"
+    },
+    "status": "finished",
+    "minute": -1,
+    "winner": "away",
+    "has_extra_time": false,
+    "has_penalties": false,
+    "goals": {
+        "home_ht_goals": 0,
+        "away_ht_goals": 0,
+        "home_ft_goals": 0,
+        "away_ft_goals": 1,
+        "home_et_goals": -1,
+        "away_et_goals": -1,
+        "home_pen_goals": -1,
+        "away_pen_goals": -1
+    },
+    "events": [
+        {
+            "event_type": "yellow_card",
+            "event_minute": "1",
+            "team": "away",
+            "player": {}
+        },
+        {
+            "event_type": "yellow_card",
+            "event_minute": "41",
+            "team": "home",
+            "player": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "46",
+            "team": "away",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "57",
+            "team": "away",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "70",
+            "team": "home",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "70",
+            "team": "home",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "yellow_card",
+            "event_minute": "71",
+            "team": "home",
+            "player": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "71",
+            "team": "away",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "goal",
+            "event_minute": "75",
+            "team": "away",
+            "player": {},
+            "assist_player": {}
+        },
+        {
+            "event_type": "yellow_card",
+            "event_minute": "77",
+            "team": "away",
+            "player": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "80",
+            "team": "home",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "80",
+            "team": "home",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "84",
+            "team": "home",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "88",
+            "team": "away",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "substitution",
+            "event_minute": "88",
+            "team": "away",
+            "player_in": {},
+            "player_out": {}
+        },
+        {
+            "event_type": "yellow_card",
+            "event_minute": "90",
+            "team": "away",
+            "player": {}
+        }
+    ],
+    "odds": {
+        "match_winner": {
+            "home": 5.5,
+            "draw": 3.78,
+            "away": 1.6
+        },
+        "over_under": {
+            "total": 2.5,
+            "over": 1.92,
+            "under": 1.85
+        },
+        "handicap": {
+            "market": "+1.0",
+            "home": 1.74,
+            "away": 2.05
+        },
+        "last_modified_timestamp": 1759249876
+    },
+    "lineups": {
+        "lineup_type": "live",
+        "lineups": {
+            "home": [],
+            "away": []
+        },
+        "bench": {
+            "home": [],
+            "away": []
+        },
+        "sidelined": {
+            "home": [],
+            "away": []
+        },
+        "formation": {
+            "home": "3-4-3",
+            "away": "4-2-3-1"
+        }
+    },
+    "match_preview": {
+        "has_preview": false,
+        "word_count": -1
+    }
+}

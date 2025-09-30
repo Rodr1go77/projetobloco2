@@ -50,16 +50,17 @@ export default function AnalisePartida() {
          {matchData.teams.home.name} vs {matchData.teams.away.name}
         </Typography>
 
-<Box>
-<Typography variant="h5" > Odds da partida <br />
-</Typography>
-</Box>
+<Box  sx={{display: "flex",  justifyContent: "center", flexDirection: "column", alignItems: "center",  border: "2px solid #1976d2", borderRadius: "25px", pl: 3, pr:3, pt: 1.5, pb: 1.5, bgcolor: "white" }}>
+
+<Typography variant="h5" sx={{fontWeight: "bold", color: "steelblue"}}  > Odds da partida </Typography>
 
 <Typography variant="h5" > 
   {matchData.teams.home.name} - {matchData.odds.match_winner.home} {" "} - 
   Empate - {matchData.odds.match_winner.draw} {" "}- {" "} 
     {matchData.teams.away.name} - {matchData.odds.match_winner.away}
     </Typography>
+</Box>
+
 
 <Box>
   <br />
