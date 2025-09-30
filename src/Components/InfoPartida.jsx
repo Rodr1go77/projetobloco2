@@ -43,6 +43,9 @@ export default function InfoPartida() {
           {" "}
          INFORMAÇÕES DA PARTIDA
         </Typography>
+
+
+        
       </Box>
     </Box>
   );

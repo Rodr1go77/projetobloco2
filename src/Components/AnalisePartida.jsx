@@ -39,7 +39,7 @@ export default function AnalisePartida() {
   }
 
   return (
-    <Box sx={{ display: "flex",  justifyContent: "center", alignItems: "center", height: "100vh", }}>
+    <Box sx={{ display: "flex",  justifyContent: "center", alignItems: "center" }}>
       
       <Box  sx={{ marginBottom: 5, display: "flex", flexDirection: "column",  width: 1000, justifyContent: "center",  
         alignItems: "center", border: "2px solid #1976d2", borderRadius: "7px", padding: 4, margin: "auto" }} >
