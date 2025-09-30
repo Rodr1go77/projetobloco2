@@ -1,5 +1,5 @@
 fetch(
-  "https://api.soccerdataapi.com/country/?auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3",
+  "https://api.soccerdataapi.com/match/?match_id=969716&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3",
   {
     method: "GET",
     headers: {
@@ -7,9 +7,10 @@ fetch(
       "Accept-Encoding": "gzip",
     },
   }
-).then(
-  (response) => response.json() // transforma a resposta em json
 )
-.then (
-dadosPaises => console.log(dadosPaises) 
-)
+  .then(
+    (response) => response.json() // transforma a resposta em json
+  )
+  .then(
+    liveScores => console.log(liveScores)
+  )

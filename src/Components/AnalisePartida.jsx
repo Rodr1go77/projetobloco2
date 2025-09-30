@@ -6,8 +6,14 @@ import {
   autocompleteClasses,
   Button,
 } from "@mui/material";
+import { useEffect, useState } from "react";
 
 export default function AnalisePartida() {
+  const [matchData, setMatchData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+
+  
   return (
     <Box
       sx={{
@@ -41,7 +47,7 @@ export default function AnalisePartida() {
           }}
         >
           {" "}
-         ANÁLISE DA PARTIDA
+          ANÁLISE DA PARTIDA
         </Typography>
       </Box>
     </Box>
