@@ -20,7 +20,6 @@ export default function JogoResponsavel() {
       <Box
         sx={{
           marginBottom: 5,
-          // height: "80vh",
           display: "flex",
           flexDirection: "column",
           width: 1000,
@@ -41,7 +40,7 @@ export default function JogoResponsavel() {
           }}
         >
           {" "}
-         JOGO RESPONSAVEL
+      JOGO RESPONSÁVEL
         </Typography>
       </Box>
     </Box>

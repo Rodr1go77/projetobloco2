@@ -3,6 +3,7 @@ import Main from "./Components/Main";
 import AnalisePartida from "./Components/AnalisePartida"
 import InfoPartida from "./Components/InfoPartida";
 import JogoResponsavel from "./Components/JogoResponsavel"
+import Cadastro from "./Components/Cadastro"
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <AnalisePartida/>
       <InfoPartida/>
       <JogoResponsavel/>
+      <Cadastro/>
     </div>
   );
 }

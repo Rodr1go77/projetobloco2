@@ -7,7 +7,7 @@ import {
   Button,
 } from "@mui/material";
 
-export default function Main() {
+export default function Cadastro() {
   return (
     <Box
       sx={{
@@ -23,11 +23,11 @@ export default function Main() {
           // height: "80vh",
           display: "flex",
           flexDirection: "column",
-          width: 450,
+          width: 1000,
           justifyContent: "center",
           alignItems: "center",
-          border: "4px solid #1976d2",
-          borderRadius: "17px",
+          border: "2px solid #1976d2",
+          borderRadius: "7px",
           padding: 4,
           margin: "auto",
         }}
@@ -41,26 +41,8 @@ export default function Main() {
           }}
         >
           {" "}
-          BET RIGHT
+         Cadastro
         </Typography>
-        <TextField
-          required
-          id="outlined-required"
-          label="Nome"
-          defaultValue="Digite o seu nome:"
-          sx={{ width: 400, margin: 3 }}
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="E-mail"
-          defaultValue="Digite o seu e-mail:"
-          sx={{ width: 400, margin: 3 }}
-        />
-        <Box>
-          <Button variant="contained">Login</Button>
-          <Button variant="contained" sx={{margin: 1}}>Cadastrar</Button>
-        </Box>
       </Box>
     </Box>
   );

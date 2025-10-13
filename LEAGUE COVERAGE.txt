@@ -1,0 +1,130 @@
+LEAGUE COVERAGE
+Country	League	Livescore	Schedules	Standings	Odds	Previews	Plan
+Albania	Superliga	✓	✓	✓	✓	✓	Pro
+Algeria	Ligue 1	✓	✓	✓	✓	✓	Pro
+Andorra	First Division	✓	✓	✓	✓	✓	Pro
+Argentina	Liga Profesional	✓	✓	✓	✓	✓	Plus
+Armenia	Premier League	✓	✓	✓	✓	✓	Pro
+Australia	A-League	✓	✓	✓	✓	✓	Pro
+Austria	Bundesliga	✓	✓	✓	✓	✓	Plus
+Azerbaijan	Premyer Liqa	✓	✓	✓	✓	✓	Pro
+Belarus	Premier League	✓	✓	✓	✓	✓	Pro
+Belgium	First Division A	✓	✓	✓	✓	✓	Plus
+Bolivia	Primera Division	✓	✓	✓	✓	✓	Pro
+Bosnia And Herzegovina	Premijer Liga	✓	✓	✓	✓	✓	Pro
+Brazil	Serie A	✓	✓	✓	✓	✓	Plus
+Brazil	Serie B	✓	✓	✓	✓	✓	Pro
+Brazil	Copa Do Brasil	✓	✓	✓	✓	✓	Pro
+Bulgaria	First League	✓	✓	✓	✓	✓	Pro
+Canada	Canadian Premier League	✓	✓	✓	✓	☓	Pro
+Chile	Primera Division	✓	✓	✓	✓	✓	Plus
+China	Csl	✓	✓	✓	✓	✓	Basic
+Colombia	Primera A	✓	✓	✓	✓	✓	Plus
+Costa Rica	Primera Division	✓	✓	✓	✓	✓	Pro
+Croatia	Hnl	✓	✓	✓	✓	✓	Plus
+Cyprus	First Division	✓	✓	✓	✓	✓	Pro
+Czech Republic	Czech Liga	✓	✓	✓	✓	✓	Plus
+Denmark	Superliga	✓	✓	✓	✓	✓	Plus
+Ecuador	Liga Pro	✓	✓	✓	✓	✓	Pro
+Egypt	Premier League	✓	✓	✓	✓	✓	Pro
+England	Premier League	✓	✓	✓	✓	✓	Basic
+England	Championship	✓	✓	✓	✓	✓	Basic
+England	Fa Cup	✓	✓	✓	✓	✓	Basic
+England	League One	✓	✓	✓	✓	✓	Plus
+England	League Two	✓	✓	✓	✓	✓	Plus
+England	League Cup	✓	✓	✓	✓	✓	Plus
+Estonia	Meistriliiga	✓	✓	✓	✓	✓	Pro
+Europe	Europa Conference League	✓	✓	✓	✓	✓	Basic
+Europe	Uefa Champions League	✓	✓	✓	✓	✓	Basic
+Europe	Uefa European Championship Qualification	✓	✓	✓	✓	✓	Plus
+Europe	Uefa European Championship	✓	✓	✓	✓	✓	Plus
+Europe	Europa League	✓	✓	✓	✓	✓	Basic
+Finland	Veikkausliiga	✓	✓	✓	✓	✓	Plus
+Finland	Ykkonen	✓	✓	✓	✓	✓	Plus
+France	Ligue 1	✓	✓	✓	✓	✓	Basic
+France	Ligue 2	✓	✓	✓	✓	✓	Plus
+France	Coupe De France	✓	✓	✓	✓	✓	Plus
+Georgia	Erovnuli Liga	✓	✓	✓	✓	✓	Pro
+Germany	Bundesliga	✓	✓	✓	✓	✓	Basic
+Germany	2. Bundesliga	✓	✓	✓	✓	✓	Plus
+Germany	Dfb Pokal	✓	✓	✓	✓	✓	Plus
+Germany	3. Liga	✓	✓	✓	✓	✓	Plus
+Greece	Super League 1	✓	✓	✓	✓	✓	Pro
+Guatemala	Liga Nacional	✓	✓	✓	✓	✓	Pro
+Honduras	Liga Nacional	✓	✓	✓	✓	✓	Pro
+Hungary	Nb I	✓	✓	✓	✓	✓	Plus
+Iceland	Urvalsdeild	✓	✓	✓	✓	✓	Pro
+India	Super League	✓	✓	✓	✓	✓	Pro
+Indonesia	Liga 1	✓	✓	✓	✓	✓	Pro
+International	Afc Champions League	✓	✓	✓	✓	✓	Pro
+International	Caf Champions League	✓	✓	✓	✓	✓	Pro
+International	Fifa World Cup	✓	✓	✓	✓	✓	Plus
+International	Fifa Club World Cup	✓	✓	✓	✓	✓	Pro
+International	Fifa Women'S World Cup	✓	✓	✓	✓	✓	Plus
+International	Caf World Cup Qualification	✓	✓	✓	✓	✓	Plus
+International	Afc World Cup Qualification	✓	✓	✓	✓	✓	Plus
+International	Concacaf World Cup Qualification	✓	✓	✓	✓	✓	Plus
+International	Uefa World Cup Qualification	✓	✓	✓	✓	✓	Plus
+International	Ofc World Cup Qualification	✓	✓	✓	✓	✓	Plus
+International	Conmebol World Cup Qualification	✓	✓	✓	✓	✓	Plus
+International	Copa Libertadores	✓	✓	✓	✓	✓	Pro
+Ireland	Premier Division	✓	✓	✓	✓	✓	Pro
+Ireland	First Division	✓	✓	✓	✓	✓	Pro
+Israel	Ligat Ha'Al	✓	✓	✓	✓	✓	Pro
+Italy	Serie A	✓	✓	✓	✓	✓	Basic
+Italy	Serie B	✓	✓	✓	✓	✓	Plus
+Italy	Coppa Italia	✓	✓	✓	✓	✓	Plus
+Japan	J1 League	✓	✓	✓	✓	✓	Plus
+Japan	J2 League	✓	✓	✓	✓	✓	Plus
+Kazakhstan	Premier League	✓	✓	✓	✓	✓	Pro
+Latvia	Virsliga	✓	✓	✓	✓	✓	Pro
+Lithuania	A Lyga	✓	✓	✓	✓	✓	Pro
+Luxembourg	National Division	✓	✓	✓	✓	✓	Pro
+Macedonia	First League	✓	✓	✓	✓	✓	Pro
+Malaysia	Super League	✓	✓	✓	✓	✓	Pro
+Malta	Premier League	✓	✓	✓	✓	✓	Pro
+Mexico	Liga Mx	✓	✓	✓	✓	✓	Plus
+Moldova	Super Liga	✓	✓	✓	✓	☓	Pro
+Morocco	Botola Pro	✓	✓	✓	✓	✓	Pro
+Netherlands	Eredivisie	✓	✓	✓	✓	✓	Basic
+Netherlands	Eerste Divisie	✓	✓	✓	✓	✓	Plus
+Netherlands	Knvb Beker	✓	✓	✓	✓	✓	Plus
+Northern Ireland	Premiership	✓	✓	✓	✓	✓	Pro
+Norway	Eliteserien	✓	✓	✓	✓	✓	Plus
+Norway	1. Division	✓	✓	✓	✓	✓	Plus
+Norway	Nm Cupen	✓	✓	✓	✓	☓	Plus
+Panama	Lpf	✓	✓	✓	✓	☓	Pro
+Paraguay	Division Profesional	✓	✓	✓	✓	✓	Pro
+Peru	Primera Division	✓	✓	✓	✓	✓	Pro
+Poland	Ekstraklasa	✓	✓	✓	✓	✓	Plus
+Portugal	Primeira Liga	✓	✓	✓	✓	✓	Basic
+Portugal	Segunda Liga	✓	✓	✓	✓	✓	Plus
+Portugal	Taca De Portugal	✓	✓	✓	✓	✓	Plus
+Qatar	Stars League	✓	✓	✓	✓	☓	Pro
+Romania	Liga I	✓	✓	✓	✓	✓	Plus
+Russia	Premier League	✓	✓	✓	✓	✓	Plus
+Saudi Arabia	Saudi League	✓	✓	✓	✓	✓	Pro
+Scotland	Premiership	✓	✓	✓	✓	✓	Basic
+Scotland	Championship	✓	✓	✓	✓	✓	Plus
+Scotland	Fa Cup	✓	✓	✓	✓	✓	Plus
+Serbia	Super Liga	✓	✓	✓	✓	✓	Pro
+Singapore	Premier League	✓	✓	✓	✓	✓	Pro
+Slovakia	Super Liga	✓	✓	✓	✓	✓	Pro
+Slovenia	1. Snl	✓	✓	✓	✓	✓	Pro
+South Africa	Psl	✓	✓	✓	✓	✓	Pro
+South Korea	K League 1	✓	✓	✓	✓	✓	Plus
+Spain	La Liga	✓	✓	✓	✓	✓	Basic
+Spain	Segunda Division	✓	✓	✓	✓	✓	Plus
+Spain	Copa Del Rey	✓	✓	✓	✓	✓	Plus
+Sweden	Allsvenskan	✓	✓	✓	✓	✓	Plus
+Sweden	Superettan	✓	✓	✓	✓	✓	Plus
+Switzerland	Super League	✓	✓	✓	✓	✓	Plus
+Switzerland	Challenge League	✓	✓	✓	✓	✓	Plus
+Thailand	Thai League 1	✓	✓	✓	✓	☓	Pro
+Turkey	Super Lig	✓	✓	✓	✓	✓	Plus
+Ukraine	Premier League	✓	✓	✓	✓	✓	Pro
+Uruguay	Primera Division	✓	✓	✓	✓	✓	Pro
+Usa	Usl Championship	✓	✓	✓	✓	✓	Plus
+Usa	Mls	✓	✓	✓	✓	✓	Basic
+Venezuela	Primera Division	✓	✓	✓	✓	☓	Pro
+Wales	Premier League	✓	✓	✓	✓	✓	Pro
