@@ -41,7 +41,7 @@ export default function Cadastro() {
           }}
         >
           {" "}
-         Registro
+         Registro de Usuário
         </Typography>
       </Box>
     </Box>
