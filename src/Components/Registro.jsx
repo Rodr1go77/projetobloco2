@@ -1,9 +1,6 @@
 import Box from "@mui/material/Box";
 import {
-  Typography,
-  Divider,
-  autocompleteClasses,
-  Button,
+  Typography
 } from "@mui/material";
 
 export default function Cadastro() {

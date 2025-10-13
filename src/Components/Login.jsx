@@ -2,9 +2,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import {
   Typography,
-  Divider,
-  autocompleteClasses,
-  Button,
+  Button
 } from "@mui/material";
 
 export default function Main() {
