@@ -1,18 +1,20 @@
 import "./App.css"
-import Main from "./Components/Main";
+import Login from "./Components/Login";
+import Registro from "./Components/Registro"
+import EsqueciMinhaSenha from "./Components/EsqueciMinhaSenha"
+import Home from "./Components/Home";
 import AnalisePartida from "./Components/AnalisePartida"
-import InfoPartida from "./Components/InfoPartida";
-import JogoResponsavel from "./Components/JogoResponsavel"
-import Cadastro from "./Components/Cadastro"
+import Perfil from "./Components/Perfil"
 
 export default function App() {
   return (
     <div >
-      <Main/>
+      <Login/>
+      <Registro/>
+      <EsqueciMinhaSenha/>
+      <Home/>
       <AnalisePartida/>
-      <InfoPartida/>
-      <JogoResponsavel/>
-      <Cadastro/>
+      <Perfil/>
     </div>
   );
 }

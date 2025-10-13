@@ -7,7 +7,7 @@ import {
   Button,
 } from "@mui/material";
 
-export default function Cadastro() {
+export default function JogoResponsavel() {
   return (
     <Box
       sx={{
@@ -20,7 +20,6 @@ export default function Cadastro() {
       <Box
         sx={{
           marginBottom: 5,
-          // height: "80vh",
           display: "flex",
           flexDirection: "column",
           width: 1000,
@@ -41,7 +40,7 @@ export default function Cadastro() {
           }}
         >
           {" "}
-         Cadastro
+      Perfil
         </Typography>
       </Box>
     </Box>

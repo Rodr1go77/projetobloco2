@@ -9,7 +9,7 @@ import {
 
 import { useEffect, useState } from "react";
 
-export default function InfoPartida() {
+export default function Home() {
 
   const [matchData, setMatchData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -73,7 +73,7 @@ export default function InfoPartida() {
           }}
         >
           {" "}
-         INFORMAÇÕES DA PARTIDA
+        HOME - Lista de Partidas
         </Typography>
 
 

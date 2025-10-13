@@ -44,7 +44,7 @@ export default function AnalisePartida() {
       <Box  sx={{ marginBottom: 5, display: "flex", flexDirection: "column",  width: 1000, justifyContent: "center",  
         alignItems: "center", border: "2px solid #1976d2", borderRadius: "7px", padding: 4, margin: "auto" }} >
 
-        <Typography sx={{ fontWeight: "bolder", fontSize: "2rem", marginBottom: 3, color: "white" }}> ANÁLISE DA PARTIDA </Typography>
+        <Typography sx={{ fontWeight: "bolder", fontSize: "2rem", marginBottom: 3, color: "white" }}> ANÁLISE DA PARTIDA  </Typography>
         
         <Typography variant="h3" gutterBottom align="center">
          {matchData.teams.home.name} vs {matchData.teams.away.name}

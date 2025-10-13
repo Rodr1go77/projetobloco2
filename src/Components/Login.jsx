@@ -7,7 +7,7 @@ import {
   Button,
 } from "@mui/material";
 
-export default function JogoResponsavel() {
+export default function Main() {
   return (
     <Box
       sx={{
@@ -20,13 +20,14 @@ export default function JogoResponsavel() {
       <Box
         sx={{
           marginBottom: 5,
+          // height: "80vh",
           display: "flex",
           flexDirection: "column",
-          width: 1000,
+          width: 450,
           justifyContent: "center",
           alignItems: "center",
-          border: "2px solid #1976d2",
-          borderRadius: "7px",
+          border: "4px solid #1976d2",
+          borderRadius: "17px",
           padding: 4,
           margin: "auto",
         }}
@@ -40,8 +41,27 @@ export default function JogoResponsavel() {
           }}
         >
           {" "}
-      JOGO RESPONSÁVEL
+          BET RIGHT
         </Typography>
+        <TextField
+          required
+          id="outlined-required"
+          label="Nome"
+          defaultValue="Digite o seu nome:"
+          sx={{ width: 400, margin: 3 }}
+        />
+        <TextField
+          required
+          id="outlined-required"
+          label="E-mail"
+          defaultValue="Digite o seu e-mail:"
+          sx={{ width: 400, margin: 3 }}
+        />
+        <Box>
+          <Button variant="contained">Login</Button>
+          <Button variant="contained" sx={{margin: 1}}>Registre-se</Button>
+          <Button variant="contained" sx={{margin: 1}}> Esqueci minha senha</Button>
+        </Box>
       </Box>
     </Box>
   );
