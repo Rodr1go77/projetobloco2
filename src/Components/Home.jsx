@@ -69,7 +69,7 @@ export default function Home() {
           }}
         >
           {" "}
-        HOME - Lista de Partidas
+        HOME - Lista das Partidas
         </Typography>
 
 
