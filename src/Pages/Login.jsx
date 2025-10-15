@@ -58,7 +58,7 @@ export default function Main() {
         <Box>
           <Button variant="contained">Login</Button>
           <Button variant="contained" sx={{margin: 1}}>Registre-se</Button>
-          <Button variant="contained" sx={{margin: 1}}> Esqueci a senha</Button>
+          <Button variant="contained" sx={{margin: 1}}> Esqueci aminha senha</Button>
         </Box>
       </Box>
     </Box>
