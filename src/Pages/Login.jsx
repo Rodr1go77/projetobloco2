@@ -1,9 +1,6 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import {
-  Typography,
-  Button
-} from "@mui/material";
+import { Typography, Button } from "@mui/material";
 
 export default function Main() {
   return (
@@ -57,8 +54,13 @@ export default function Main() {
         />
         <Box>
           <Button variant="contained">Login</Button>
-          <Button variant="contained" sx={{margin: 1}}>Registre-se</Button>
-          <Button variant="contained" sx={{margin: 1}}> Esqueci aminha senha</Button>
+          <Button variant="contained" sx={{ margin: 1 }}>
+            Registre-se
+          </Button>
+          <Button variant="contained" sx={{ margin: 1 }}>
+            {" "}
+            Esqueci a minha senha
+          </Button>
         </Box>
       </Box>
     </Box>
