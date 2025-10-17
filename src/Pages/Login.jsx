@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Typography, Button } from "@mui/material";
+import Button from "../Components/default/Button";
+import Typography from "../Components/default/Typography";
 
 export default function Main() {
   return (
@@ -27,33 +28,21 @@ export default function Main() {
           margin: "auto",
         }}
       >
-        <Typography
-          sx={{
-            fontWeight: "bolder",
-            fontSize: "2rem",
-            marginBottom: 3,
-            color: "white",
-          }}
-        >
-          {" "}
-          BET RIGHT
-        </Typography>
+        <Typography> BET RIGHT</Typography>
         <TextField
-          required
-          id="outlined-required"
           label="Nome"
           defaultValue="Digite o seu nome:"
-          sx={{ width: 400, margin: 3 }}
+          sx={{ width: 420, margin: 1 }}
         />
         <TextField
-          required
-          id="outlined-required"
           label="E-mail"
           defaultValue="Digite o seu e-mail:"
-          sx={{ width: 400, margin: 3 }}
+          sx={{ width: 420, margin: 1 }}
         />
         <Box>
-          <Button variant="contained">Login</Button>
+          <Button variant="contained" sx={{ margin: 1 }}>
+            Login
+          </Button>
           <Button variant="contained" sx={{ margin: 1 }}>
             Registre-se
           </Button>
