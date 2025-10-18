@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "../Components/default/Button";
 import Typography from "../Components/default/Typography";
+// import { supabase } from "./services/supabaseClient";
 
 export default function Main() {
   return (

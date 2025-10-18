@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 import AnalisePartida from "./Pages/AnalisePartida";
 import Perfil from "./Pages/Perfil";
 import Components from "./Pages/Components";
-import { supabase } from "./services/supabaseClient";
+// import { supabase } from "./services/supabaseClient";
 
 export default function App() {
   return (
