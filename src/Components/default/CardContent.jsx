@@ -1,9 +1,8 @@
 import React from "react";
+import {  CardContent as MuiCardContent } from "@mui/material";
 
-const CardContent = () => {
-  return (
-  <div>Aqui entrará um CardContent..</div>
-  )
+const CardContent = (props) => {
+  return <MuiCardContent {...props}>{props.children}</MuiCardContent>;
 };
 
 export default CardContent;

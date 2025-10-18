@@ -24,7 +24,7 @@ import {
   TextField,
   TimePicker,
   Typography,
-} from "../Components/default";
+} from "../Components";
 
 import Alert from "../Components/customs/Alert";
 

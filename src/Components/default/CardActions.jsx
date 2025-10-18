@@ -1,9 +1,8 @@
 import React from "react";
+import { CardActions as MuiCardActions} from "@mui/material";
 
-const CardActions = () => {
-  return (
-    <div>Aqui entrará um CardActions..</div>
-  );
+const CardActions = (props) => {
+  return <MuiCardActions {...props}>{props.children}</MuiCardActions>;
 };
 
 export default CardActions;
