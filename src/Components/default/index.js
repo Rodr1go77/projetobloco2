@@ -1,5 +1,5 @@
 export { default as AppBar } from "./AppBar";
-export { default as Avatar } from "./Avatar";
+export { default as Avatar } from "../customs/Avatar";
 export { default as Button } from "./Button";
 export { default as Card } from "./Card";
 export { default as CardActions } from "./CardActions";

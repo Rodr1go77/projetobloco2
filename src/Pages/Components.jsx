@@ -44,9 +44,8 @@ const Components = () => {
         {" "}
         Alerta de Teste{" "}
       </Alert>
-
       <AppBar position="static" />
-      <Avatar>U</Avatar>
+      <Avatar src="https://i.pravatar.cc/150?img=3" />
       <Button>Button</Button>
       <Card />
       <CardActions>

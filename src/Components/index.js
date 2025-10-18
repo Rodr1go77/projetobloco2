@@ -1,6 +1,6 @@
 export { default as Alert } from "./customs/Alert";
 export { default as AppBar } from "./default/AppBar";
-export { default as Avatar } from "./default/Avatar";
+export { default as Avatar } from "./customs/Avatar";
 export { default as Button } from "./default/Button";
 export { default as Card } from "./default/Card";
 export { default as CardActions } from "./default/CardActions";
