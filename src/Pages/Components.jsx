@@ -16,7 +16,6 @@ import {
   Modal,
   Pagination,
   Rating,
-  SearchBar,
   Skeleton,
   Snackbar,
   Stack,
@@ -67,7 +66,6 @@ const Components = () => {
       <Modal />
       <Pagination count={10} />
       <Rating />
-      <SearchBar />
       <Skeleton variant="rectangular" height={50} />
       <Snackbar message="Snackbar message" />
       <Stack />

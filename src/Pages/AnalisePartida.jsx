@@ -1,83 +1,128 @@
-import Box from "@mui/material/Box";
-import {
-  Typography,
-  List,
-  ListItem,
-  Divider,
-} from "@mui/material";
+import { Box, Typography } from "../Components";
+import { List, ListItem, Divider } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function AnalisePartida() {
   const [matchData, setMatchData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch(
-      "https://api.soccerdataapi.com/match/?match_id=969716&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setMatchData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar dados:", error);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://api.soccerdataapi.com/match/?match_id=969716&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Dados recebidos da API:", data);
+  //       setMatchData(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Erro ao buscar dados:", error);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   if (loading) {
-    return  <Typography variant="body1" sx={{ mt: 2 }}> Carregando dados da partida...</Typography>
+    return (
+      <Typography variant="body1" sx={{ mt: 2 }}>
+        {" "}
+        Carregando dados da partida...
+      </Typography>
+    );
   }
 
   if (!matchData) {
-    return  <Typography color="error" variant="body1"> Erro: não foi possível carregar os dados. </Typography>
+    return (
+      <Typography color="error" variant="body1">
+        {" "}
+        Erro: não foi possível carregar os dados.{" "}
+      </Typography>
+    );
   }
 
   return (
-    <Box sx={{ display: "flex",  justifyContent: "center", alignItems: "center" }}>
-      
-      <Box  sx={{ marginBottom: 5, display: "flex", flexDirection: "column",  width: 1000, justifyContent: "center",  
-        alignItems: "center", border: "2px solid #1976d2", borderRadius: "7px", padding: 4, margin: "auto" }} >
-
-        <Typography sx={{ fontWeight: "bolder", fontSize: "2rem", marginBottom: 3, color: "white" }}> ANÁLISE DA PARTIDA  </Typography>
-        
-        <Typography variant="h3" gutterBottom align="center">
-         {matchData.teams.home.name} vs {matchData.teams.away.name}
+    <Box
+      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+    >
+      <Box
+        sx={{
+          marginBottom: 5,
+          display: "flex",
+          flexDirection: "column",
+          width: 1000,
+          justifyContent: "center",
+          alignItems: "center",
+          border: "2px solid #1976d2",
+          borderRadius: "7px",
+          padding: 4,
+          margin: "auto",
+        }}
+      >
+        <Typography
+          sx={{
+            fontWeight: "bolder",
+            fontSize: "2rem",
+            marginBottom: 3,
+            color: "white",
+          }}
+        >
+          {" "}
+          ANÁLISE DA PARTIDA{" "}
         </Typography>
 
-<Box  sx={{display: "flex",  justifyContent: "center", flexDirection: "column", alignItems: "center",  border: "2px solid #1976d2", borderRadius: "25px", pl: 3, pr:3, pt: 1.5, pb: 1.5, bgcolor: "white" }}>
+        <Typography variant="h3" gutterBottom align="center">
+          {matchData.teams.home.name} vs {matchData.teams.away.name}
+        </Typography>
 
-<Typography variant="h5" sx={{fontWeight: "bold", color: "steelblue"}}  > Odds da partida </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            border: "2px solid #1976d2",
+            borderRadius: "25px",
+            pl: 3,
+            pr: 3,
+            pt: 1.5,
+            pb: 1.5,
+            bgcolor: "white",
+          }}
+        >
+          <Typography
+            variant="h5"
+            sx={{ fontWeight: "bold", color: "steelblue" }}
+          >
+            {" "}
+            Odds da partida{" "}
+          </Typography>
 
-<Typography variant="h5" > 
-  {matchData.teams.home.name} - {matchData.odds.match_winner.home} {" "} - 
-  Empate - {matchData.odds.match_winner.draw} {" "}- {" "} 
-    {matchData.teams.away.name} - {matchData.odds.match_winner.away}
-    </Typography>
-</Box>
+          <Typography variant="h5">
+            {matchData.teams.home.name} - {matchData.odds.match_winner.home} -
+            Empate - {matchData.odds.match_winner.draw} -{" "}
+            {matchData.teams.away.name} - {matchData.odds.match_winner.away}
+          </Typography>
+        </Box>
 
-
-<Box>
-  <br />
-<Typography variant="h5" > Vencedor do Confronto:  {matchData.winner} <br />
-
-</Typography>
-</Box>
-
-
-
-        <Typography variant="body1" gutterBottom align="center"> 
+        <Box>
           <br />
-         Data da partida: {matchData.date} <br />
-         Horário do jogo: {matchData.time} <br />
-         Campeonato: {matchData.league.name} <br />
-         País: {matchData.country.name} <br />
-         Estádio: {matchData.stadium.name} <br />
-         Cidade: {matchData.stadium.city}
-         </Typography>
-         
-         <Divider sx={{ my: 2 }} />
+          <Typography variant="h5">
+            {" "}
+            Vencedor do Confronto: {matchData.winner} <br />
+          </Typography>
+        </Box>
+
+        <Typography variant="body1" gutterBottom align="center">
+          <br />
+          Data da partida: {matchData.date} <br />
+          Horário do jogo: {matchData.time} <br />
+          Campeonato: {matchData.league.name} <br />
+          País: {matchData.country.name} <br />
+          Estádio: {matchData.stadium.name} <br />
+          Cidade: {matchData.stadium.city}
+        </Typography>
+
+        <Divider sx={{ my: 2 }} />
 
         <Typography variant="h6">Eventos</Typography>
         <List>
@@ -89,11 +134,7 @@ export default function AnalisePartida() {
             </ListItem>
           ))}
         </List>
-
-
-
       </Box>
-
     </Box>
   );
 }

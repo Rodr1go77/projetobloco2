@@ -1,8 +1,4 @@
-import Box from "@mui/material/Box";
-import {
-  Typography
-} from "@mui/material";
-
+import {Box, Typography}  from "../Components";
 import { useEffect, useState } from "react";
 
 export default function Home() {
