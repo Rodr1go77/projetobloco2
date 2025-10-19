@@ -1,5 +1,4 @@
-import { avatarClasses } from "@mui/material";
-import { Box, Button, Typography, Grid, TextField , Stack, Avatar} from "../Components";
+import { Button, Typography, Grid, TextField , Stack, Avatar} from "../Components";
 import logo1 from "../assets/images/logo1.png";
 // import { supabase } from "./services/supabaseClient";
 
