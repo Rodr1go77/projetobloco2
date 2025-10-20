@@ -38,7 +38,6 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(modeloData);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");

@@ -26,13 +26,13 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <Login />
-      {/* <Registro /> */}
+      <Registro />
       </ThemeProvider>
-      {/* <EsqueciMinhaSenha /> */}
-      {/* <Home /> */}
-      {/* <AnalisePartida /> */}
-      {/* <Perfil /> */}
-      {/* <Components /> */}
+      <EsqueciMinhaSenha />
+      <Home />
+      <AnalisePartida />
+      <Perfil />
+      <Components />
     </>
   );
 }

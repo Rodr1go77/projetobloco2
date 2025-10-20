@@ -1,10 +1,10 @@
 import { Box, Typography } from "../Components";
 import { List, ListItem, Divider } from "@mui/material";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 export default function AnalisePartida() {
-  const [matchData, setMatchData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // const [matchData, setMatchData] = useState(null);
+  // const [loading, setLoading] = useState(true);
 
   // useEffect(() => {
   //   fetch(
