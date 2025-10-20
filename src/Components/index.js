@@ -20,7 +20,7 @@ export { default as Modal } from "./default/Modal";
 export { default as Pagination } from "./default/Pagination";
 export { default as Rating } from "./default/Rating";
 export { default as Skeleton } from "./default/Skeleton";
-export { default as Snackbar } from "./default/Snackbar";
+export { default as Snackbar } from "./customs/Snackbar";
 export { default as Stack } from "./customs/Stack";
 export { default as Switch } from "./default/Switch";
 export { default as TextField } from "./customs/TextField";

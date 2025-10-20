@@ -24,15 +24,15 @@ palette: {
 export default function App() {
   return (
     <>
-      {/* <Components /> */}
       <ThemeProvider theme={theme}>
         <Login />
+      {/* <Registro /> */}
       </ThemeProvider>
-      <Registro />
-      <EsqueciMinhaSenha />
-      <Home />
-      <AnalisePartida />
-      <Perfil />
+      {/* <EsqueciMinhaSenha /> */}
+      {/* <Home /> */}
+      {/* <AnalisePartida /> */}
+      {/* <Perfil /> */}
+      {/* <Components /> */}
     </>
   );
 }

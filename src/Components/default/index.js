@@ -16,7 +16,7 @@ export { default as Modal } from "./Modal";
 export { default as Pagination } from "./Pagination";
 export { default as Rating } from "./Rating";
 export { default as Skeleton } from "./Skeleton";
-export { default as Snackbar } from "./Snackbar";
+export { default as Snackbar } from "../customs/Snackbar";
 export { default as Stack } from "../customs/Stack";
 export { default as Switch } from "./Switch";
 export { default as TextField } from "../customs/TextField";
