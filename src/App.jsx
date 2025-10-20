@@ -8,7 +8,6 @@ import Home from "./Pages/Home";
 import AnalisePartida from "./Pages/AnalisePartida";
 import Perfil from "./Pages/Perfil";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Components from "./Pages/Components";
 import Authentication from "./services/Authentication";
 
 // import { supabase } from "./services/supabaseClient";
@@ -45,13 +44,11 @@ export default function App() {
         ) : (
           <Login onLoginSuccess={() => setIsAuthenticated(true)} />
         )}
+      <Registro />
       </ThemeProvider>
-
-      {/* <Registro /> */}
-      {/* <EsqueciMinhaSenha /> */}
-      {/* <AnalisePartida /> */}
-      {/* <Perfil /> */}
-      {/* <Components /> */}
+      <EsqueciMinhaSenha />
+      <AnalisePartida />
+      <Perfil />
     </>
   );
 }

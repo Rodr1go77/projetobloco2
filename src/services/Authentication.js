@@ -14,7 +14,7 @@ const Authentication = {
         });
     },
     isAuthenticated: async ()=> {
-        const {data, error} = await Supabase.auth.getUser();
+        const {data} = await Supabase.auth.getUser();
         return !!data?.user;
     },
     logout: async ()=> {
