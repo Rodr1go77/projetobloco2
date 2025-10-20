@@ -34,7 +34,7 @@ const styles = {
   },
 };
 
-export default function Login() {
+export default function Login({onLoginSuccess}) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -75,6 +75,9 @@ export default function Login() {
       }
       setMessage("Login efetuado com sucesso!");
       console.log(JSON.stringify(data));
+      setTimeout(() => {
+        if (onLoginSuccess) onLoginSuccess();
+      }, 3000);
     } catch (error) {
       if (error.message === "Invalid login credentials") {
         setMessage ("E-mail ou senha incorretos.");

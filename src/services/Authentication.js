@@ -13,5 +13,12 @@ const Authentication = {
             password,
         });
     },
+    isAuthenticated: async ()=> {
+        const {data, error} = await Supabase.auth.getUser();
+        return !!data?.user;
+    },
+    logout: async ()=> {
+        return await Supabase.auth.signOut();
+    }
 }
     export default Authentication;
