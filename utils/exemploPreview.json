@@ -1,0 +1,76 @@
+{
+  "country": {
+    "id": 82,
+    "name": "egypt"
+  },
+  "date": "30-10-2025",
+  "id": 966622,
+  "league": {
+    "id": 227,
+    "name": "Premier League"
+  },
+  "match_data": {
+    "excitement_rating": 9.22,
+    "prediction": {
+      "choice": "over",
+      "total": "3.5",
+      "type": "over_under"
+    },
+    "weather": {
+      "description": "sunny",
+      "temp_c": 28.5,
+      "temp_f": 83.2
+    }
+  },
+  "preview_content": [
+    {
+      "content": "This Thursday at 17:00 (UTC), the National Bank Egypt will face fierce local rivals Zamalek at Cairo’s Petrosport Stadium...",
+      "name": "p1"
+    },
+    {
+      "content": "A. Rayan's rising confidence after scoring twice in the recent match...",
+      "name": "h1"
+    },
+    {
+      "content": "At Cairo’s Petrosport Stadium, the gloom hangs over National Bank Egypt...",
+      "name": "p2"
+    },
+    {
+      "content": "Juan Alvina’s three away goals this season echo Cairo’s bustling spirit...",
+      "name": "h2"
+    },
+    {
+      "content": "Zamalek, currently perched in fourth place with 18 points...",
+      "name": "p3"
+    },
+    {
+      "content": "As the sun sets behind Cairo’s iconic Nile towers...",
+      "name": "p4"
+    },
+    {
+      "content": "Zamalek eyes top spot in the Premier League...",
+      "name": "h3"
+    },
+    {
+      "content": "With 18 points, Zamalek has a real opportunity to overtake Al Ahly...",
+      "name": "p5"
+    }
+  ],
+  "stage": {
+    "id": 13988,
+    "is_active": true,
+    "name": "Premier League"
+  },
+  "teams": {
+    "away": {
+      "id": 4111,
+      "name": "Zamalek"
+    },
+    "home": {
+      "id": 4132,
+      "name": "National Bank of Egypt"
+    }
+  },
+  "time": "17:00",
+  "word_count": 699
+}
