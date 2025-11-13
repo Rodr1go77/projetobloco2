@@ -25,7 +25,7 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 2,
+    marginTop: 14,
     marginBottom: 2,
   },
   avatar: {

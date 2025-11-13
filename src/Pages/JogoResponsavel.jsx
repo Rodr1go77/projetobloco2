@@ -3,7 +3,7 @@ import {
   Typography
 } from "@mui/material";
 
-export default function Perfil() {
+export default function JogoResponsavel() {
   return (
     <Box
       sx={{
@@ -36,7 +36,7 @@ export default function Perfil() {
           }}
         >
           {" "}
-      Perfil
+      Jogo Responsável
         </Typography>
       </Box>
     </Box>

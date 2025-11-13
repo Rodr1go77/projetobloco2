@@ -1,9 +1,9 @@
 import Box from "@mui/material/Box";
-import {
-  Typography
-} from "@mui/material";
+import { Typography } from "@mui/material";
+import RoutesPath from "../routes/RoutesPath";
+import { Link } from "react-router";
 
-export default function Perfil() {
+export default function NavMenu() {
   return (
     <Box
       sx={{
@@ -36,8 +36,12 @@ export default function Perfil() {
           }}
         >
           {" "}
-      Perfil
+          NavMenu
         </Typography>
+
+        <Link to={RoutesPath.LOGIN}>Login</Link>
+        <Link to={RoutesPath.LISTA_PARTIDAS}>Home</Link>
+
       </Box>
     </Box>
   );

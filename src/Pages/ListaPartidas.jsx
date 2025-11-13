@@ -1,6 +1,7 @@
 import {Button, Grid, Typography}  from "../Components";
 import { useEffect, useState } from "react";
 import Authentication from "../services/Authentication";
+import NavMenu from "./NavMenu";
 
 const styles = {
   stack: {
@@ -22,7 +23,7 @@ const styles = {
   },
 };
 
-export default function Home() {
+export default function ListaPartidas() {
 
   const [matchData, setMatchData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -51,15 +52,14 @@ export default function Home() {
   }
 
   return (
+<>
+      <NavMenu />
     <Grid container spacing={2} sx={styles.container}>
       <Grid
         size={{ xs: 12, sm: 12, md: 12, lg:12, xl: 12 }}
         sx={{ marginBottom: 1, display: "flex", flexDirection: "column", justifyContent: "center",
           alignItems: "center", textAlign: "center", border: "4px solid #1976d2", borderRadius: "17px", p: 1, pb:0 }}
       >
-        <Typography
-          // sx={{ fontWeight: "bolder", fontSize: "18rem", marginBottom: 3, textAlign: "center", p: 0, m: 0 }} 
-          > HOME </Typography>
         <Typography         
           sx={{ fontWeight: "bolder", fontSize: "1rem", marginBottom: 3, textAlign: "center", p: 0, m: 0 }} >Lista das Partidas</Typography>
       </Grid>
@@ -73,6 +73,6 @@ export default function Home() {
         > Logout
         </Button>
         </Grid>
-    
+    </>
   );
 }
