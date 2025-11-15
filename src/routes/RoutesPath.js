@@ -1,5 +1,5 @@
 const RoutesPath = {
-  LOGIN: "/",
+  LOGIN: "/login",
   LISTA_PARTIDAS: "/listaPartidas",
   REGISTRO: "/registro",
   ESQUECI_SENHA: "/esqueciSenha",

@@ -10,12 +10,10 @@ import Perfil from "./Pages/Perfil";
 import JogoResponsavel from "./Pages/JogoResponsavel";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Authentication from "./services/Authentication";
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import RoutesPath from "./routes/RoutesPath";
 import AuthLayout from "./layout/AuthLayout";
+import PublicLayout from "./layout/PublicLayout";
 
 // import { supabase } from "./services/supabaseClient";
 
@@ -48,17 +46,38 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <Routes>
           <Route
-            path={RoutesPath.LOGIN} element={<Login onLoginSuccess={() => setIsAuthenticated(true)} />}
+            path="/"
+            element={<Navigate to={RoutesPath.LOGIN} replace />}
           />
-          <Route element={<AuthLayout isAuthenticated={isAuthenticated}/>}>
-            <Route path={RoutesPath.LISTA_PARTIDAS} element={<ListaPartidas />}/>
-            <Route path={RoutesPath.ANALISE_PARTIDA} element={<AnalisePartida />}/>
+          {/* Publicas */}
+          <Route
+            path={RoutesPath.LOGIN}
+            element={<Login onLoginSuccess={() => setIsAuthenticated(true)} />}
+          />
+          <Route element={<PublicLayout />}>
+            <Route
+              path={RoutesPath.ESQUECI_SENHA}
+              element={<EsqueciMinhaSenha />}
+            />
             <Route path={RoutesPath.REGISTRO} element={<Registro />} />
-            <Route path={RoutesPath.ESQUECI_SENHA}element={<EsqueciMinhaSenha />}/>
-            <Route path={RoutesPath.PERFIL} element={<Perfil />} />
-            <Route path={RoutesPath.JOGO_RESPONSAVEL}element={<JogoResponsavel />}/>
           </Route>
 
+          {/* Privadas */}
+          <Route element={<AuthLayout isAuthenticated={isAuthenticated} />}>
+            <Route
+              path={RoutesPath.LISTA_PARTIDAS}
+              element={<ListaPartidas />}
+            />
+            <Route
+              path={RoutesPath.ANALISE_PARTIDA}
+              element={<AnalisePartida />}
+            />
+            <Route path={RoutesPath.PERFIL} element={<Perfil />} />
+            <Route
+              path={RoutesPath.JOGO_RESPONSAVEL}
+              element={<JogoResponsavel />}
+            />
+          </Route>
         </Routes>
       </ThemeProvider>
     </>

@@ -1,37 +1,50 @@
-import Box from "@mui/material/Box";
 import RoutesPath from "../routes/RoutesPath";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
+import { Grid } from "../Components";
+
+const styles = {
+  container: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    zIndex: 999,
+    background: "#ffffff",
+    borderBottom: "4px solid #1976d2",
+    fontFamily: "Roboto",
+    padding: "20px 0",
+  },
+  menuItem: {
+    textDecoration: "none",
+    color: "#1976d2",
+    fontWeight: "500",
+    fontSize: "1.1rem",
+    transition: "0.2s ease",
+  },
+};
 
 export default function NavMenu() {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "auto",
-      }}
-    >
-      <Box
+    <>
+      <Grid
+        container
+        spacing={2}
         sx={{
-          marginBottom: 5,
+          ...styles.container,
           display: "flex",
-          width: 1000,
           justifyContent: "space-evenly",
           alignItems: "center",
-          border: "4px solid #1976d2",
-          borderRadius: "8px",
-          padding: 4,
-          margin: "auto",
         }}
       >
-        <Link to={RoutesPath.LISTA_PARTIDAS}> Home </Link>
-        <Link to={RoutesPath.ANALISE_PARTIDA}> Análise da Partida </Link>
-        <Link to={RoutesPath.JOGO_RESPONSAVEL}> Jogo Responsável </Link> 
-        <Link to={RoutesPath.PERFIL}> Perfil </Link> 
-        <Link to={RoutesPath.REGISTRO}> Registrar </Link>
-        <Link to={RoutesPath.ESQUECI_SENHA}> Esqueci Minha Senha </Link>
-      </Box>
-    </Box>
+        <Link style={styles.menuItem} to={RoutesPath.LISTA_PARTIDAS}>Home</Link>
+        <Link style={styles.menuItem} to={RoutesPath.ANALISE_PARTIDA}>Análise</Link>
+        <Link style={styles.menuItem} to={RoutesPath.JOGO_RESPONSAVEL}>Responsável</Link>
+        <Link style={styles.menuItem} to={RoutesPath.PERFIL}>Perfil</Link>
+        <Link style={styles.menuItem} to={RoutesPath.REGISTRO}>Registrar</Link>
+        <Link style={styles.menuItem} to={RoutesPath.ESQUECI_SENHA}>Esqueci Senha</Link>
+      </Grid>
+
+      <div style={{ height: "80px" }}></div>
+    </>
   );
 }

@@ -68,16 +68,18 @@ export default function ListaPartidas() {
         <Grid
           size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
           sx={{
-            marginBottom: 1,
+            // marginBottom: 1,
             display: "flex",
-            flexDirection: "column",
+            // flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
             border: "4px solid #1976d2",
             borderRadius: "8px",
-            p: 1,
-            pb: 0,
+            width: "95%",
+            padding: 2
+            // p: 0,
+            // pb: 1,
           }}
         >
           {/* <NavMenu /> */}
@@ -91,7 +93,7 @@ export default function ListaPartidas() {
               m: 0,
             }}
           >
-            Lista das Partidas
+            Lista de Partidas
           </Typography>
         </Grid>
         <Button

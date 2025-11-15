@@ -13,7 +13,7 @@ import logo1 from "../assets/images/logo1.png";
 import { modeloData } from "../services/modelo";
 import Authentication from "../services/Authentication";
 // import { supabase } from "./services/supabaseClient";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import RoutesPath from "../routes/RoutesPath";
 
 const styles = {
