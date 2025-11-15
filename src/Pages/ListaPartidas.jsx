@@ -1,7 +1,8 @@
-import {Button, Grid, Typography}  from "../Components";
+import { Button, Grid, Typography } from "../Components";
 import { useEffect, useState } from "react";
 import Authentication from "../services/Authentication";
-import NavMenu from "./NavMenu";
+import { useNavigate } from "react-router-dom";
+import RoutesPath from "../routes/RoutesPath";
 
 const styles = {
   stack: {
@@ -24,7 +25,7 @@ const styles = {
 };
 
 export default function ListaPartidas() {
-
+  const navigate = useNavigate();
   const [matchData, setMatchData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -44,35 +45,68 @@ export default function ListaPartidas() {
   }, []);
 
   if (loading) {
-    return  <Typography variant="body1" sx={{ mt: 2 }}> Carregando dados da partida...</Typography>
+    return (
+      <Typography variant="body1" sx={{ mt: 2 }}>
+        {" "}
+        Carregando dados da partida...
+      </Typography>
+    );
   }
 
   if (!matchData) {
-    return  <Typography color="error" variant="body1"> Erro: não foi possível carregar os dados. </Typography>
+    return (
+      <Typography color="error" variant="body1">
+        {" "}
+        Erro: não foi possível carregar os dados.{" "}
+      </Typography>
+    );
   }
 
   return (
-<>
-      <NavMenu />
-    <Grid container spacing={2} sx={styles.container}>
-      <Grid
-        size={{ xs: 12, sm: 12, md: 12, lg:12, xl: 12 }}
-        sx={{ marginBottom: 1, display: "flex", flexDirection: "column", justifyContent: "center",
-          alignItems: "center", textAlign: "center", border: "4px solid #1976d2", borderRadius: "17px", p: 1, pb:0 }}
-      >
-        <Typography         
-          sx={{ fontWeight: "bolder", fontSize: "1rem", marginBottom: 3, textAlign: "center", p: 0, m: 0 }} >Lista das Partidas</Typography>
-      </Grid>
+    <>
+      <Grid container spacing={2} sx={styles.container}>
+        <Grid
+          size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
+          sx={{
+            marginBottom: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+            border: "4px solid #1976d2",
+            borderRadius: "8px",
+            p: 1,
+            pb: 0,
+          }}
+        >
+          {/* <NavMenu /> */}
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontSize: "1rem",
+              marginBottom: 3,
+              textAlign: "center",
+              p: 0,
+              m: 0,
+            }}
+          >
+            Lista das Partidas
+          </Typography>
+        </Grid>
         <Button
           loading={loading}
           variant="contained"
           sx={{ margin: 1, fontSize: "1rem" }}
           onClick={async () => {
             await Authentication.logout();
-            window.location.href = "/login"; }}
-        > Logout
+            navigate(RoutesPath.LOGIN);
+          }}
+        >
+          {" "}
+          Logout
         </Button>
-        </Grid>
+      </Grid>
     </>
   );
 }

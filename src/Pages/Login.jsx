@@ -13,6 +13,8 @@ import logo1 from "../assets/images/logo1.png";
 import { modeloData } from "../services/modelo";
 import Authentication from "../services/Authentication";
 // import { supabase } from "./services/supabaseClient";
+import { useNavigate } from "react-router";
+import RoutesPath from "../routes/RoutesPath";
 
 const styles = {
   stack: {
@@ -41,6 +43,7 @@ export default function Login({onLoginSuccess}) {
   const [error, setError] = useState(modeloData);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     setLoading(true);
@@ -75,6 +78,7 @@ export default function Login({onLoginSuccess}) {
       }
       setMessage("Login efetuado com sucesso!");
       console.log(JSON.stringify(data));
+      navigate(RoutesPath.LISTA_PARTIDAS);
       setTimeout(() => {
         if (onLoginSuccess) onLoginSuccess();
       }, 3000);

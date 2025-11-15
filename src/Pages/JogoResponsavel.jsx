@@ -10,7 +10,7 @@ export default function JogoResponsavel() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        height: "auto",
       }}
     >
       <Box
