@@ -50,7 +50,7 @@ export default function App() {
           <Route
             path={RoutesPath.LOGIN} element={<Login onLoginSuccess={() => setIsAuthenticated(true)} />}
           />
-          <Route element={<AuthLayout />}>
+          <Route element={<AuthLayout isAuthenticated={isAuthenticated}/>}>
             <Route path={RoutesPath.LISTA_PARTIDAS} element={<ListaPartidas />}/>
             <Route path={RoutesPath.ANALISE_PARTIDA} element={<AnalisePartida />}/>
             <Route path={RoutesPath.REGISTRO} element={<Registro />} />
