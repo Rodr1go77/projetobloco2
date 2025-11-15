@@ -38,7 +38,7 @@ export default function NavMenu() {
       >
         <Link style={styles.menuItem} to={RoutesPath.LISTA_PARTIDAS}>Home</Link>
         <Link style={styles.menuItem} to={RoutesPath.ANALISE_PARTIDA}>Análise</Link>
-        <Link style={styles.menuItem} to={RoutesPath.JOGO_RESPONSAVEL}>Responsável</Link>
+        <Link style={styles.menuItem} to={RoutesPath.JOGO_RESPONSAVEL}>Jogo Responsável</Link>
         <Link style={styles.menuItem} to={RoutesPath.PERFIL}>Perfil</Link>
         <Link style={styles.menuItem} to={RoutesPath.REGISTRO}>Registrar</Link>
         <Link style={styles.menuItem} to={RoutesPath.ESQUECI_SENHA}>Esqueci Senha</Link>
