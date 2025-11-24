@@ -1,6 +1,8 @@
 import RoutesPath from "../routes/RoutesPath";
 import { Link } from "react-router-dom";
-import { Grid } from "../Components";
+import { Grid, Button } from "../Components";
+import Authentication from "../services/Authentication";
+import { useNavigate } from "react-router-dom";
 
 const styles = {
   container: {
@@ -23,7 +25,10 @@ const styles = {
   },
 };
 
+
 export default function NavMenu() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Grid
@@ -42,6 +47,20 @@ export default function NavMenu() {
         <Link style={styles.menuItem} to={RoutesPath.PERFIL}>Perfil</Link>
         <Link style={styles.menuItem} to={RoutesPath.REGISTRO}>Registrar</Link>
         <Link style={styles.menuItem} to={RoutesPath.ESQUECI_SENHA}>Esqueci Senha</Link>
+
+        <Grid item>
+          <Button
+            variant="contained"
+            sx={{ fontSize: "1rem" }}
+            onClick={async () => {
+              await Authentication.logout();
+              navigate(RoutesPath.LOGIN);
+            }}
+          >
+            Logout
+          </Button>
+        </Grid>
+
       </Grid>
 
       <div style={{ height: "80px" }}></div>

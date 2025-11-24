@@ -3,7 +3,7 @@ import {Grid as MuiGrid} from "@mui/material";
 
 const Grid = (props) => {
   return (
-    <MuiGrid {...props}>
+    <MuiGrid {...props} sx={props.sx}>
       {props.children}
     </MuiGrid>
   );

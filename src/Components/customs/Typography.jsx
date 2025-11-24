@@ -1,16 +1,9 @@
 import React from "react";
 import { Typography as MuiTypography} from "@mui/material";
 
-const Typography = ({ children }) => {
+const Typography = ({ children, ...rest }) => {
   return (
-    <MuiTypography
-      sx={{
-        fontWeight: "bolder",
-        fontSize: "2rem",
-        marginBottom: 3,
-        color: "white",
-      }}
-    >
+    <MuiTypography {...rest}>
       {children}
     </MuiTypography>
   );

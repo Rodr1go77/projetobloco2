@@ -1,0 +1,184 @@
+{
+    "id": 531585,
+    "league": {
+        "id": 206,
+        "name": "Liga Profesional"
+    },
+    "stage": {
+        "id": 6347,
+        "name": "Liga Profesional Argentina: 2nd Phase"
+    },
+    "date": "26/08/2023",
+    "time": "00:30",
+    "teams": {
+        "home": {
+            "id": 3842,
+            "name": "Colon"
+        },
+        "away": {
+            "id": 3843,
+            "name": "Gimnasia La Plata"
+        }
+    },
+    "stadium": {
+        "id": 1891,
+        "name": "Estadio Brigadier General Estanislao Lopez",
+        "city": "Ciudad de Santa Fe, Provincia de Santa Fe"
+    },
+    "status": "finished",
+    "minute": -1,
+    "winner": "home",
+    "has_extra_time": false,
+    "has_penalties": false,
+    "goals": {
+        "home_ht_goals": 2,
+        "away_ht_goals": 0,
+        "home_ft_goals": 2,
+        "away_ft_goals": 0,
+        "home_et_goals": -1,
+        "away_et_goals": -1,
+        "home_pen_goals": -1,
+        "away_pen_goals": -1
+    },
+    "events": [
+        {
+            "event_type": "goal",
+            "event_minute": "14",
+            "team": "home",
+            "player": {
+                "id": 53675,
+                "name": "J. Benítez"
+            },
+            "assist_player": null
+        },
+        {
+            "event_type": "goal",
+            "event_minute": "27",
+            "team": "home",
+            "player": {
+                "id": 53644,
+                "name": "T. Galván"
+            },
+            "assist_player": null
+        }
+    ],
+    "odds": {
+        "match_winner": {
+            "home": 1.84,
+            "draw": 3.5,
+            "away": 4.3
+        },
+        "over_under": {
+            "total": 2.5,
+            "over": 2.1,
+            "under": 1.74
+        },
+        "handicap": {
+            "market": -0.5,
+            "home": 1.81,
+            "away": 1.96
+        },
+        "last_modified_timestamp": 1693017076
+    },
+    "lineups": {
+        "lineup_type": "live",
+        "lineups": {
+            "home": [
+                {
+                    "player": {
+                        "id": 102150,
+                        "name": "R. Botta"
+                    },
+                    "position": "M"
+                },
+                {
+                    "player": {
+                        "id": 53656,
+                        "name": "S. Moreyra"
+                    },
+                    "position": "M"
+                }
+            ],
+            "away": [
+                {
+                    "player": {
+                        "id": 102150,
+                        "name": "R. Botta"
+                    },
+                    "position": "M"
+                },
+                {
+                    "player": {
+                        "id": 53656,
+                        "name": "S. Moreyra"
+                    },
+                    "position": "M"
+                }
+            ]
+        },
+        "bench": {
+            "home": [
+                {
+                    "player": {
+                        "id": 53637,
+                        "name": "B. Perlaza"
+                    },
+                    "position": "M"
+                },
+                {
+                    "player": {
+                        "id": 53653,
+                        "name": "L. Picco"
+                    },
+                    "position": "M"
+                }
+            ],
+            "away": [
+                {
+                    "player": {
+                        "id": 53692,
+                        "name": "Z. Zegarra"
+                    },
+                    "position": "M"
+                },
+                {
+                    "player": {
+                        "id": 84921,
+                        "name": "R. Saravia"
+                    },
+                    "position": "M"
+                }
+            ]
+        },
+        "sidelined": {
+            "home": [
+                {
+                    "player": {
+                        "id": 31889,
+                        "name": "M. Novak"
+                    },
+                    "status": "out",
+                    "desc": "Injury"
+                }
+            ],
+            "away": [
+                {
+                    "player": {
+                        "id": 31889,
+                        "name": "M. Novak"
+                    },
+                    "status": "out",
+                    "desc": "Injury"
+                }
+            ]
+        },
+        "formation": {
+            "home": "4-3-3",
+            "away": "4-3-3"
+        }
+    },
+    "match_preview": {
+        "has_previews": true,
+        "word_count": 389
+    }
+}

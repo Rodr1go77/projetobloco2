@@ -1,44 +1,38 @@
-import Box from "@mui/material/Box";
-import {
-  Typography
-} from "@mui/material";
+import { Grid, Typography } from "../Components";
 
 export default function JogoResponsavel() {
   return (
-    <Box
+    <Grid
+      id="containerTitulo"
+      item
+      xs={12}
+      sm={12}
+      md={10}
+      lg={8}
+      xl={6}
       sx={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
         alignItems: "center",
-        height: "auto",
+        textAlign: "center",
+        border: "4px solid #1976d2",
+        borderRadius: "8px",
+        width: "100%",
+        padding: 1,
+        margin: "0 auto",
+        backgroundColor: "#AAC4F5",
       }}
     >
-      <Box
+      <Typography
         sx={{
-          marginBottom: 5,
-          display: "flex",
-          flexDirection: "column",
-          width: 1000,
-          justifyContent: "center",
-          alignItems: "center",
-          border: "2px solid #1976d2",
-          borderRadius: "7px",
-          padding: 4,
-          margin: "auto",
+          fontWeight: "bolder",
+          fontSize: "2rem",
+          textAlign: "center",
+          color: "white",
         }}
       >
-        <Typography
-          sx={{
-            fontWeight: "bolder",
-            fontSize: "2rem",
-            marginBottom: 3,
-            color: "white",
-          }}
-        >
-          {" "}
-      Jogo Responsável
-        </Typography>
-      </Box>
-    </Box>
+        Jogo Responsável
+      </Typography>
+    </Grid>
   );
 }
