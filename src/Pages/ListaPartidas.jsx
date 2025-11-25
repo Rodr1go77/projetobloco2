@@ -56,12 +56,14 @@ export default function ListaPartidas() {
 
   return (
     <>
-      <Grid id="containerGeral"
+      <Grid
+        id="containerGeral"
         container
         spacing={2}
         sx={{ display: "flex", justifyContent: "center" }}
       >
-        <Grid id="containerTitulo"
+        <Grid
+          id="containerTitulo"
           item
           xs={12}
           sm={12}
@@ -70,13 +72,13 @@ export default function ListaPartidas() {
           xl={6}
           sx={{
             display: "flex",
-            justifyContent: "space-evenly",
+            justifyContent: "center",
+            flexDirection: "column",
             alignItems: "center",
             textAlign: "center",
-            border: "4px solid #1976d2",
-            borderRadius: "8px",
+            border: "2px solid #1976d2",
+            borderRadius: "4px",
             width: "100%",
-            padding: 1,
             margin: "0 auto",
             backgroundColor: "#AAC4F5",
           }}
@@ -87,17 +89,15 @@ export default function ListaPartidas() {
               fontSize: "2rem",
               textAlign: "center",
               color: "white",
-              
+              p:1
             }}
           >
-            Lista de Partidas
+            Lista de Partidas 
           </Typography>
-        
-        
-        
         </Grid>
 
-        <Grid id="containerCards"
+        <Grid
+          id="containerCards"
           container
           spacing={2}
           justifyContent="center"

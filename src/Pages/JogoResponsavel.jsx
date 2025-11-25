@@ -12,13 +12,13 @@ export default function JogoResponsavel() {
       xl={6}
       sx={{
         display: "flex",
-        justifyContent: "space-evenly",
+        justifyContent: "center",
+        flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
-        border: "4px solid #1976d2",
-        borderRadius: "8px",
+        border: "2px solid #1976d2",
+        borderRadius: "4px",
         width: "100%",
-        padding: 1,
         margin: "0 auto",
         backgroundColor: "#AAC4F5",
       }}
@@ -29,6 +29,7 @@ export default function JogoResponsavel() {
           fontSize: "2rem",
           textAlign: "center",
           color: "white",
+          p: 1,
         }}
       >
         Jogo Responsável

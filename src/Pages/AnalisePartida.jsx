@@ -7,9 +7,14 @@ export default function AnalisePartida() {
   const [matchData, setMatchData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const capitalize = (str) =>
+    str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+  const lineups = matchData?.lineups?.lineups ?? null;
+
   useEffect(() => {
     fetch(
-      "https://api.soccerdataapi.com/match/?match_id=954441&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3"
+      "https://api.soccerdataapi.com/match/?match_id=954489&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -50,7 +55,8 @@ export default function AnalisePartida() {
     );
   }
   return (
-    <Grid id="containerGeral"
+    <Grid
+      id="containerGeral"
       container
       spacing={2}
       sx={{
@@ -59,7 +65,8 @@ export default function AnalisePartida() {
         flexDirection: "column",
       }}
     >
-      <Grid id="containerTitulo"
+      <Grid
+        id="containerTitulo"
         item
         xs={12}
         sm={12}
@@ -72,10 +79,9 @@ export default function AnalisePartida() {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          border: "4px solid #1976d2",
-          borderRadius: "8px",
+          border: "2px solid #1976d2",
+          borderRadius: "4px",
           width: "100%",
-          padding: 1,
           margin: "0 auto",
           backgroundColor: "#AAC4F5",
         }}
@@ -83,34 +89,39 @@ export default function AnalisePartida() {
         <Typography
           sx={{
             fontWeight: "bolder",
-            fontSize: "2rem",
+            fontSize: "1.5rem",
             textAlign: "center",
             color: "white",
-            mb: 1,
+            pt: 2,
+            lineHeight: 1.5,
           }}
         >
           Análise da Partida
         </Typography>
 
         <Typography
-          variant="h3"
-          gutterBottom
-          align="center"
-          color="#064c91ff"
-          fontWeight="bold"
+          sx={{
+            fontSize: "2rem",
+            fontWeight: "bold",
+            color: "#064c91ff",
+            textAlign: "center",
+            pb: 2,
+            lineHeight: 1,
+          }}
         >
           {matchData.teams.home.name} vs {matchData.teams.away.name}
         </Typography>
       </Grid>
 
-      <Box id="boxOdds"
+      <Box
+        id="boxOdds"
         sx={{
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
           alignItems: "center",
           border: "2px solid #1976d2",
-          borderRadius: "8px",
+          borderRadius: "4px",
           pl: 3,
           pr: 3,
           pt: 1.5,
@@ -121,26 +132,31 @@ export default function AnalisePartida() {
         }}
       >
         <Typography
-          variant="h5"
-          sx={{ fontWeight: "bold", color: "steelblue" }}
+          sx={{
+            fontWeight: "bold",
+            color: "steelblue",
+            pb: 1,
+            fontSize: "1.5rem",
+          }}
         >
           Odds da partida
         </Typography>
 
-        <Typography variant="h5">
+        <Typography variant="h5" sx={{ pb: 1 }}>
           {matchData.teams.home.name} - {matchData.odds.match_winner.home} -
           Empate - {matchData.odds.match_winner.draw} -{" "}
           {matchData.teams.away.name} - {matchData.odds.match_winner.away}
         </Typography>
       </Box>
 
-      <Box id="boxVencedor"
+      <Box
+        id="boxVencedor"
         sx={{
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
           alignItems: "center",
-          color: "red"
+          color: "red",
         }}
       >
         <Typography variant="h5">
@@ -155,50 +171,160 @@ export default function AnalisePartida() {
         </Typography>
       </Box>
 
-
-      <Box id="BoxServicoJogo"
-              sx={{
+      <Box
+        sx={{
           display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          border: "2px solid #1976d2",
-          borderRadius: "8px",
-          pl: 3,
-          pr: 3,
-          pt: 1.5,
-          pb: 1.5,
-          bgcolor: "white",
-          width: "40%",
-          mx: "auto",
+          justifyContent: "flex-start",
+          width: "100%",
+          gap: 2,
         }}
       >
+        <Box
+          id="BoxServicoJogo"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            border: "2px solid #1976d2",
+            borderRadius: "8px",
+            p: 2,
+            bgcolor: "white",
+            flex: 1,
+          }}
+        >
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              color: "steelblue",
+              pb: 1,
+              fontSize: "1.5rem",
+              textAlign: "center",
+            }}
+          >
+            Serviço do Jogo
+          </Typography>
 
-            <Typography variant="body1" gutterBottom align="left">
-              <br />
-              Data da partida: {matchData.date} <br />
-              Horário do jogo: {matchData.time} <br />
-              Campeonato: {matchData.league.name} <br />
-              País: {matchData.country.name} <br />
-              Estádio: {matchData.stadium.name} <br />
-              Cidade: {matchData.stadium.city}
+          <Divider
+            textAlign="center"
+            sx={{
+              lineHeight: 1.8,
+              fontSize: "1rem",
+              fontWeight: "bold",
+              mb: 1,
+            }}
+          ></Divider>
+
+          <Typography variant="body1" sx={{ lineHeight: 2 }} align="left">
+            Data da partida: {matchData.date} <br />
+            Horário do jogo: {matchData.time} <br />
+            Campeonato: {matchData.league.name} <br />
+            País: {capitalize(matchData.country.name)} <br />
+            Estádio: {matchData.stadium.name} <br />
+            Cidade: {matchData.stadium.city}
+          </Typography>
+        </Box>
+
+        <Box
+          id="BoxEscalacoes"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            border: "2px solid #1976d2",
+            borderRadius: "8px",
+            p: 2,
+            bgcolor: "white",
+            flex: 1,
+          }}
+        >
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              color: "steelblue",
+              pb: 1,
+              fontSize: "1.5rem",
+              textAlign: "center",
+            }}
+          >
+            Escalações
+          </Typography>
+
+          <Divider
+            textAlign="center"
+            sx={{ lineHeight: 1.8, fontSize: "1rem", fontWeight: "bold" }}
+          >
+            {matchData.teams.home.name}
+          </Divider>
+
+          {lineups.home.map((p) => (
+            <Typography key={p.player.id} sx={{ lineHeight: 1.8 }}>
+              {p.player.name} ({p.position})
             </Typography>
+          ))}
+          <br />
+          <Divider
+            textAlign="center"
+            sx={{ lineHeight: 1.8, fontSize: "1rem", fontWeight: "bold" }}
+          >
+            {matchData.teams.away.name}
+          </Divider>
+
+          {lineups.away.map((p) => (
+            <Typography key={p.player.id} sx={{ lineHeight: 1.8 }}>
+              {p.player.name} ({p.position})
+            </Typography>
+          ))}
+        </Box>
+
+        <Box
+          id="boxEventos"
+          sx={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            border: "2px solid #1976d2",
+            borderRadius: "8px",
+            p: 2,
+            bgcolor: "white",
+          }}
+        >
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              color: "steelblue",
+              pb: 1,
+              fontSize: "1.5rem",
+              textAlign: "center",
+            }}
+          >
+            Eventos da Partida
+          </Typography>
+          <Divider
+            textAlign="center"
+            sx={{
+              lineHeight: 1.8,
+              fontSize: "1rem",
+              fontWeight: "bold",
+              mb: 1,
+            }}
+          ></Divider>
+          <List
+            sx={{
+              maxHeight: "auto",
+              overflowY: "auto",
+              width: "100%",
+            }}
+          >
+            {matchData.events.map((event, index) => (
+              <ListItem key={index} sx={{ py: 1 }}>
+                <Typography variant="body2">
+                  <b>{event.event_minute}'</b> - {event.event_type} (
+                  {event.team})
+                </Typography>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+        
       </Box>
-
-
-
-      <Divider sx={{ my: 2 }} />
-
-      <Typography variant="h6">Eventos</Typography>
-      <List>
-        {matchData.events.map((event, index) => (
-          <ListItem key={index} sx={{ py: 0.5 }}>
-            <Typography variant="body2">
-              <b>{event.event_minute}'</b> - {event.event_type} ({event.team})
-            </Typography>
-          </ListItem>
-        ))}
-      </List>
     </Grid>
   );
 }
