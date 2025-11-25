@@ -116,7 +116,7 @@ export default function AnalisePartida() {
           pt: 1.5,
           pb: 1.5,
           bgcolor: "white",
-          width: "40%",
+          width: "50%",
           mx: "auto",
         }}
       >

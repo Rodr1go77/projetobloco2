@@ -27,7 +27,7 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 14,
+    marginTop: 6,
     marginBottom: 2,
   },
   avatar: {
@@ -36,8 +36,7 @@ const styles = {
   },
 };
 
-export default function Login({onLoginSuccess}) {
-
+export default function Login({ onLoginSuccess }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(modeloData);
@@ -84,7 +83,7 @@ export default function Login({onLoginSuccess}) {
       }, 3000);
     } catch (error) {
       if (error.message === "Invalid login credentials") {
-        setMessage ("E-mail ou senha incorretos.");
+        setMessage("E-mail ou senha incorretos.");
       } else {
         setMessage("Falha no login:" + error.message);
       }
@@ -107,20 +106,23 @@ export default function Login({onLoginSuccess}) {
           alignItems: "center",
           border: "4px solid #1976d2",
           borderRadius: "17px",
+          backgroundColor: "#e6e2e2ff",
           p: 2,
           pb: 4,
+          boxShadow: "2px 8px 12px rgba(0, 0, 0, 0.5)",
         }}
       >
         <Stack direction="row" spacing={2} sx={styles.stack}>
           <Avatar src={logo1} sx={styles.avatar}></Avatar>
         </Stack>
-          <Typography marginBottom={1} > Bem vindo! </Typography>
+
+        <Typography marginBottom={1}> Bem vindo! </Typography>
+
         <TextField
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           error={error.email.show}
           helperText={error.email.show ? error.email.message : ""}
-          label="E-mail"
           type="email"
           placeholder="Digite o e-mail de login:"
           sx={{ width: "100%", margin: 1 }}
@@ -130,7 +132,6 @@ export default function Login({onLoginSuccess}) {
           onChange={(e) => setPassword(e.target.value)}
           error={error.password.show}
           helperText={error.password.show ? error.password.message : ""}
-          label="Senha"
           placeholder="Digite a sua senha:"
           type="password"
           sx={{ width: "100%", margin: 1 }}
@@ -152,17 +153,25 @@ export default function Login({onLoginSuccess}) {
             {" "}
             Entrar{" "}
           </Button>
-          <Button 
+
+          <Button
             variant="contained"
             sx={{ margin: 1, fontSize: "1rem" }}
+            onClick={() => navigate(RoutesPath.REGISTRO)}
+          >
+            Registrar
+          </Button>
+
+          <Button
+            variant="contained"
+            sx={{ margin: 1, fontSize: "1rem" }}
+            onClick={() => navigate(RoutesPath.ESQUECI_SENHA)}
           >
             {" "}
-            Registrar{" "}
-          </Button>
-          <Button variant="contained" sx={{ margin: 1, fontSize: "1rem" }}>
             Esqueci a senha{" "}
           </Button>
         </Grid>
+
         <Snackbar
           open={message !== ""}
           autoHideDuration={3000}

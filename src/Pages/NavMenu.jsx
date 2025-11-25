@@ -11,7 +11,7 @@ const styles = {
     left: 0,
     width: "100%",
     zIndex: 999,
-    background: "#ffffff",
+    background: "e6e2e2ff",
     borderBottom: "4px solid #1976d2",
     fontFamily: "Roboto",
     padding: "20px 0",
