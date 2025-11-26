@@ -19,6 +19,10 @@ const Authentication = {
     },
     logout: async ()=> {
         return await Supabase.auth.signOut();
+    },
+    getUser: async () => {
+        const { data } = await Supabase.auth.getUser();
+        return data?.user;
     }
 }
     export default Authentication;
