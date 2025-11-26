@@ -17,8 +17,8 @@ export default function ListaPartidas() {
         setLoading(true);
         const response = await getMatches();
         if (!response.error) {
-          setMatches(response.results.slice(0, 20));
-          console.log("Matches no estado:", response.results.slice(0, 20));
+          setMatches(response.results.slice(0, 30));
+          console.log("Matches no estado:", response.results.slice(0, 30));
         } else {
           console.error("Erro ao buscar partidas:", response.error);
         }
@@ -92,7 +92,7 @@ export default function ListaPartidas() {
               p:1
             }}
           >
-            Lista de Partidas 
+            BUSCA DE PARTIDAS AQUI
           </Typography>
         </Grid>
 
@@ -151,6 +151,10 @@ export default function ListaPartidas() {
 
                 <Typography variant="body2" sx={{ color: "black" }}>
                   Status: {match.status}
+                </Typography>
+                
+                <Typography variant="body2" sx={{ color: "black" }}>
+                  Teste {match.league}
                 </Typography>
               </Card>
             </Grid>

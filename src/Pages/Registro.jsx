@@ -28,9 +28,9 @@ avatar: {
 
 export default function Registro() {
 
-const[email, setEmail] = useState("Rodrigo");
-const[password, setPassword] = useState("123456");  
-const [confirmPassword, setConfirmPassword] = useState("123456");
+const[email, setEmail] = useState("");
+const[password, setPassword] = useState("");  
+const [confirmPassword, setConfirmPassword] = useState("");
 const [error, setError] = useState(modeloData);
 const [loading, setLoading] = useState(false);
 const[message, setMessage] = useState("");
@@ -114,7 +114,7 @@ return (
           <Stack direction="row" spacing={2} sx={styles.stack}>
             <Avatar  src={logo1} sx={styles.avatar} ></Avatar>
           </Stack>
-            <Typography marginBottom={1} > Cadastro de Usuário</Typography>
+            <Typography > Cadastro de Usuário</Typography>
           <TextField
           value={email}
           onChange={(e) => setEmail(e.target.value)}

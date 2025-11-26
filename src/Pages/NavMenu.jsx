@@ -73,7 +73,8 @@ export default function NavMenu() {
         </Link>
 
         {userEmail && (
-          <div style={{ color: "#1976d2", fontWeight: "500", marginRight: "10px" }}>
+          <div style={{ color: "#1976d2", fontWeight: "500", marginRight: "10px", display:"flex", flexDirection: "column", alignItems: "center"}}>
+            <p style={{margin: 0}}>Usuário: </p> 
             {userEmail}
           </div>
         )}
