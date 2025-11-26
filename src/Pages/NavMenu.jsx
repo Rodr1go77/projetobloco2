@@ -2,7 +2,9 @@ import RoutesPath from "../routes/RoutesPath";
 import { Link } from "react-router-dom";
 import { Grid, Button } from "../Components";
 import Authentication from "../services/Authentication";
+
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const styles = {
   container: {
@@ -25,9 +27,19 @@ const styles = {
   },
 };
 
-
 export default function NavMenu() {
   const navigate = useNavigate();
+  const [userEmail, setUserEmail] = useState("");
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await Authentication.getUser();
+      if (user) {
+        setUserEmail(user.email);
+      }
+    };
+    fetchUser();
+  }, []);
 
   return (
     <>
@@ -41,12 +53,30 @@ export default function NavMenu() {
           alignItems: "center",
         }}
       >
-        <Link style={styles.menuItem} to={RoutesPath.LISTA_PARTIDAS}>Home</Link>
-        <Link style={styles.menuItem} to={RoutesPath.ANALISE_PARTIDA}>Análise</Link>
-        <Link style={styles.menuItem} to={RoutesPath.JOGO_RESPONSAVEL}>Jogo Responsável</Link>
-        <Link style={styles.menuItem} to={RoutesPath.PERFIL}>Perfil</Link>
-        <Link style={styles.menuItem} to={RoutesPath.REGISTRO}>Registrar</Link>
-        <Link style={styles.menuItem} to={RoutesPath.ESQUECI_SENHA}>Esqueci Senha</Link>
+        <Link style={styles.menuItem} to={RoutesPath.LISTA_PARTIDAS}>
+          Home
+        </Link>
+        <Link style={styles.menuItem} to={RoutesPath.ANALISE_PARTIDA}>
+          Análise
+        </Link>
+        <Link style={styles.menuItem} to={RoutesPath.JOGO_RESPONSAVEL}>
+          Jogo Responsável
+        </Link>
+        <Link style={styles.menuItem} to={RoutesPath.PERFIL}>
+          Perfil
+        </Link>
+        <Link style={styles.menuItem} to={RoutesPath.REGISTRO}>
+          Registrar
+        </Link>
+        <Link style={styles.menuItem} to={RoutesPath.ESQUECI_SENHA}>
+          Esqueci Senha
+        </Link>
+
+        {userEmail && (
+          <div style={{ color: "#1976d2", fontWeight: "500", marginRight: "10px" }}>
+            {userEmail}
+          </div>
+        )}
 
         <Grid item>
           <Button
@@ -60,7 +90,6 @@ export default function NavMenu() {
             Logout
           </Button>
         </Grid>
-
       </Grid>
 
       <div style={{ height: "80px" }}></div>
