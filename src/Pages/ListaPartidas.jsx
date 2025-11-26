@@ -100,8 +100,7 @@ export default function ListaPartidas() {
           id="containerCards"
           container
           spacing={2}
-          justifyContent="center"
-          sx={{ mt: 2 }}
+          justifyContent="space-evenly"
         >
           {matches.map((match) => (
             <Grid
@@ -117,7 +116,7 @@ export default function ListaPartidas() {
                 onClick={() => alert(`Id do jogo: ${match.id}`)}
                 sx={{
                   padding: 2,
-                  ":hover": { transform: "scale(1.10)" },
+                  ":hover": { transform: "scale(1.05)", border: "1px solid #1976d2" },
                   transition: "0.2s",
                   cursor: "pointer",
                   border: "1px solid #ccc",
@@ -126,7 +125,7 @@ export default function ListaPartidas() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  width: "100%",
+                  width: "365px",
                 }}
               >
                 <Typography
@@ -135,6 +134,7 @@ export default function ListaPartidas() {
                     fontWeight: "bold",
                     color: "#185491ff",
                     textTransform: "upperCase",
+                    textAlign: "center",
                   }}
                 >
                   {getTeamName(match.teams.home)} vs{" "}
