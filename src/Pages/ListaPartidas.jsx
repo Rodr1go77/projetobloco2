@@ -1,11 +1,13 @@
-import { Grid, Typography, Card } from "../Components";
+import { Grid, Typography, Card, SearchBar } from "../Components";
 import { useEffect, useState } from "react";
 import { getMatches } from "../services/getMatches";
 import { useNavigate } from "react-router-dom";
+import styles from "./ListaPartidas.module.css";
 
 export default function ListaPartidas() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [leagueHeader, setLeagueHeader] = useState(null);
   const navigate = useNavigate();
 
   const getTeamName = (team) => {
@@ -18,6 +20,7 @@ export default function ListaPartidas() {
       try {
         setLoading(true);
         const response = await getMatches();
+        setLeagueHeader(response.leagueHeader);
         const allMatches = response.results || [];
         const validMatches = allMatches.filter(
           (match) =>
@@ -65,8 +68,13 @@ export default function ListaPartidas() {
         id="containerGeral"
         container
         spacing={2}
-        sx={{ display: "flex", justifyContent: "center" }}
+        className={styles.containerGeral}
       >
+
+        <SearchBar
+          className={styles.searchBar}
+        />
+
         <Grid
           id="containerTitulo"
           item
@@ -75,37 +83,21 @@ export default function ListaPartidas() {
           md={10}
           lg={8}
           xl={6}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            border: "2px solid #1976d2",
-            borderRadius: "4px",
-            width: "100%",
-            margin: "0 auto",
-            backgroundColor: "#AAC4F5",
-          }}
+          className={styles.containerTitulo}
         >
-          <Typography
-            sx={{
-              fontWeight: "bolder",
-              fontSize: "2rem",
-              textAlign: "center",
-              color: "white",
-              p: 1
-            }}
-          >
-            BUSCA DE PARTIDAS AQUI
-          </Typography>
+
+
+          <Typography className={styles.title}>
+            {leagueHeader?.leagueName || "Carregando liga..."} </Typography>
         </Grid>
+
+
 
         <Grid
           id="containerCards"
           container
           spacing={2}
-          justifyContent="space-evenly"
+          className={styles.containerCards}
         >
           {matches.map((match) => (
             <Grid
@@ -114,47 +106,30 @@ export default function ListaPartidas() {
               sm={6}
               md={4}
               lg={3}
-              sx={{ display: "flex", justifyContent: "center" }}
+              className={styles.cardItem}
               key={match.id}
             >
               <Card
                 onClick={() => navigate(`/analisePartida/${match.id}`)}
-                sx={{
-                  padding: 2,
-                  ":hover": { transform: "scale(1.05)", border: "1px solid #1976d2" },
-                  transition: "0.2s",
-                  cursor: "pointer",
-                  border: "1px solid #ccc",
-                  borderRadius: "8px",
-                  backgroundColor: "#AAC4F5",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  width: "365px",
-                }}
+                className={styles.card}
               >
                 <Typography
                   variant="subtitle1"
-                  sx={{
-                    fontWeight: "bold",
-                    color: "#185491ff",
-                    textTransform: "upperCase",
-                    textAlign: "center",
-                  }}
+                  className={styles.cardTitle}
                 >
                   {getTeamName(match.teams.home)} vs{" "}
                   {getTeamName(match.teams.away)}
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: "black" }}>
+                <Typography variant="body2" className={styles.cardText}>
                   Data: {match.date}
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: "black" }}>
+                <Typography variant="body2" className={styles.cardText}>
                   Hora: {match.time}
                 </Typography>
 
-                <Typography variant="body2" sx={{ color: "black" }}>
+                <Typography variant="body2" className={styles.cardText}>
                   Status: {match.status}
                 </Typography>
 

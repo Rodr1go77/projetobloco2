@@ -10,17 +10,27 @@ export async function getMatches() {
 
     const data = await request.json();
 
-    const matches = data[0]?.stage?.[0]?.matches ?? [];
+    const leagueHeader = {
+      leagueName: data[0]?.league_name,
+      seasonYear: data[0]?.season?.year
+    };
 
-    return { fallback: false, results: matches };
+    const matches = data[0]?.stage?.[0]?.matches ?? []
+
+    return { fallback: false, leagueHeader, results: matches };
 
   } catch (error) {
     alert("Erro na API, usando dados locais:", error.message);
 
+    const leagueHeader = {
+      leagueName: localMatchesPremiere[0]?.league_name,
+      seasonYear: localMatchesPremiere[0]?.season?.year
+    };
+
     const matchesLocal =
       localMatchesPremiere?.[0]?.stage?.[0]?.matches ?? [];
 
-    return { fallback: true, results: matchesLocal };
+    return { fallback: true, leagueHeader, results: matchesLocal };
   }
 }
 

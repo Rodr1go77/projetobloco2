@@ -19,6 +19,7 @@ export { default as Grid } from "./customs/Grid";
 export { default as Modal } from "./default/Modal";
 export { default as Pagination } from "./default/Pagination";
 export { default as Rating } from "./default/Rating";
+export { default as SearchBar } from "./customs/SearchBar";
 export { default as Skeleton } from "./default/Skeleton";
 export { default as Snackbar } from "./customs/Snackbar";
 export { default as Stack } from "./customs/Stack";
