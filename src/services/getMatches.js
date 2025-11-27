@@ -1,26 +1,26 @@
+import localMatchesPremiere from "../localData/localMatchesPremiere.json";
+
 const BASE_URL = `https://api.soccerdataapi.com/matches/?league_id=228&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3`;
 
 export async function getMatches() {
   try {
-    const request = await fetch(BASE_URL, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept-Encoding": "gzip",
-      },
-    });
+    const request = await fetch(BASE_URL);
 
     if (!request.ok) throw new Error(`Erro ${request.status}`);
 
     const data = await request.json();
-    const matches = data[0]?.stage?.[0]?.matches || [];
-    console.log("Matches extraídos:", matches);
 
-    return { results: matches};
+    const matches = data[0]?.stage?.[0]?.matches ?? [];
+
+    return { fallback: false, results: matches };
 
   } catch (error) {
-    return { error: error.message };
+    alert("Erro na API, usando dados locais:", error.message);
+
+    const matchesLocal =
+      localMatchesPremiere?.[0]?.stage?.[0]?.matches ?? [];
+
+    return { fallback: true, results: matchesLocal };
   }
 }
 
-getMatches();

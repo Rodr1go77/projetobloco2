@@ -1,13 +1,15 @@
 import { Grid, Typography, Card } from "../Components";
 import { useEffect, useState } from "react";
 import { getMatches } from "../services/getMatches";
+import { useNavigate } from "react-router-dom";
 
 export default function ListaPartidas() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const getTeamName = (team) => {
-    if (!team || !team.name || team.name === "None") return "Indefinido";
+    if (!team || !team.name || team.name === "None") return "Não disponível";
     return team.name;
   };
 
@@ -16,12 +18,15 @@ export default function ListaPartidas() {
       try {
         setLoading(true);
         const response = await getMatches();
-        if (!response.error) {
-          setMatches(response.results.slice(0, 30));
-          console.log("Matches no estado:", response.results.slice(0, 30));
-        } else {
-          console.error("Erro ao buscar partidas:", response.error);
-        }
+        const allMatches = response.results || [];
+        const validMatches = allMatches.filter(
+          (match) =>
+            match?.teams?.home?.name &&
+            match?.teams?.home?.name !== "None" &&
+            match?.teams?.away?.name &&
+            match?.teams?.away?.name !== "None"
+        );
+        setMatches(validMatches.slice(0, 30));
       } finally {
         setLoading(false);
       }
@@ -89,7 +94,7 @@ export default function ListaPartidas() {
               fontSize: "2rem",
               textAlign: "center",
               color: "white",
-              p:1
+              p: 1
             }}
           >
             BUSCA DE PARTIDAS AQUI
@@ -113,7 +118,7 @@ export default function ListaPartidas() {
               key={match.id}
             >
               <Card
-                onClick={() => alert(`Id do jogo: ${match.id}`)}
+                onClick={() => navigate(`/analisePartida/${match.id}`)}
                 sx={{
                   padding: 2,
                   ":hover": { transform: "scale(1.05)", border: "1px solid #1976d2" },
@@ -152,10 +157,7 @@ export default function ListaPartidas() {
                 <Typography variant="body2" sx={{ color: "black" }}>
                   Status: {match.status}
                 </Typography>
-                
-                <Typography variant="body2" sx={{ color: "black" }}>
-                  Teste {match.league}
-                </Typography>
+
               </Card>
             </Grid>
           ))}

@@ -4,7 +4,7 @@ const RoutesPath = {
   REGISTRO: "/registro",
   ESQUECI_SENHA: "/esqueciSenha",
   PERFIL: "/perfil",
-  ANALISE_PARTIDA: "/analisePartida",
+  ANALISE_PARTIDA: "/analisePartida/:id",
   JOGO_RESPONSAVEL: "/jogoResponsavel",
 };
 

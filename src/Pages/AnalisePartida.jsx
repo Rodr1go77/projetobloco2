@@ -1,7 +1,8 @@
 import { Box, Typography, Grid } from "../Components";
 import { List, ListItem, Divider } from "@mui/material";
 import { useEffect, useState } from "react";
-import localMatch from "../localData/matchLocal.json";
+import { getMatchById } from "../services/getMatchById";
+import { useParams } from "react-router-dom";
 
 export default function AnalisePartida() {
   const [matchData, setMatchData] = useState(null);
@@ -11,23 +12,16 @@ export default function AnalisePartida() {
     str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
   const lineups = matchData?.lineups?.lineups ?? null;
+  const {id} = useParams();
 
   useEffect(() => {
-    fetch(
-      "https://api.soccerdataapi.com/match/?match_id=954489&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Dados recebidos da API:", data);
-        setMatchData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar dados:", error);
-        setMatchData(localMatch);
-        setLoading(false);
-      });
-  }, []);
+    async function loadData() {
+      const response = await getMatchById(id);
+      setMatchData(response.result);
+      setLoading(false);
+    }
+    loadData();
+  }, [id]);
 
   if (loading) {
     return (
@@ -47,13 +41,6 @@ export default function AnalisePartida() {
     );
   }
 
-  if (matchData.error) {
-    return (
-      <Typography color="error" variant="h6">
-        Erro da API: {matchData.error}
-      </Typography>
-    );
-  }
   return (
     <Grid
       id="containerGeral"
@@ -165,8 +152,8 @@ export default function AnalisePartida() {
           {matchData.winner === "home"
             ? matchData.teams.home.name
             : matchData.winner === "away"
-            ? matchData.teams.away.name
-            : "Empate"}{" "}
+              ? matchData.teams.away.name
+              : "Empate"}{" "}
           <br />
         </Typography>
       </Box>
@@ -323,7 +310,7 @@ export default function AnalisePartida() {
             ))}
           </List>
         </Box>
-        
+
       </Box>
     </Grid>
   );
