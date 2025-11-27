@@ -15,26 +15,7 @@ import Authentication from "../services/Authentication";
 // import { supabase } from "./services/supabaseClient";
 import { useNavigate } from "react-router-dom";
 import RoutesPath from "../routes/RoutesPath";
-
-const styles = {
-  stack: {
-    color: "#080808ff",
-    padding: "10px",
-    textAlign: "center",
-  },
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 6,
-    marginBottom: 2,
-  },
-  avatar: {
-    width: 250,
-    height: 250,
-  },
-};
+import styles from "./Login.module.css";
 
 export default function Login({ onLoginSuccess }) {
   const [email, setEmail] = useState("");
@@ -93,27 +74,19 @@ export default function Login({ onLoginSuccess }) {
   };
 
   return (
-    <Grid container spacing={2} sx={styles.container}>
-      <Grid size={{ xs: 0, sm: 0, md: 4, lg: 4, xl: 4.5 }} />
-
+    <Grid
+      container
+      spacing={2}
+      className={styles.container}
+      justifyContent="center"
+      alignItems="center"
+    >
       <Grid
         size={{ xs: 12, sm: 12, md: 4, lg: 4, xl: 3 }}
-        sx={{
-          marginBottom: 1,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          border: "4px solid #1976d2",
-          borderRadius: "17px",
-          backgroundColor: "#e6e2e2ff",
-          p: 2,
-          pb: 4,
-          boxShadow: "2px 8px 12px rgba(0, 0, 0, 0.5)",
-        }}
+        className={styles.loginBox}
       >
-        <Stack direction="row" spacing={2} sx={styles.stack}>
-          <Avatar src={logo1} sx={styles.avatar}></Avatar>
+        <Stack direction="row" spacing={2} className={styles.stack}>
+          <Avatar src={logo1} className={styles.avatar}></Avatar>
         </Stack>
 
         <Typography marginBottom={1}> Bem vindo! </Typography>
@@ -125,7 +98,7 @@ export default function Login({ onLoginSuccess }) {
           helperText={error.email.show ? error.email.message : ""}
           type="email"
           placeholder="Digite o e-mail de login:"
-          sx={{ width: "100%", margin: 1 }}
+          className={styles.input}
         />
         <TextField
           value={password}
@@ -134,20 +107,13 @@ export default function Login({ onLoginSuccess }) {
           helperText={error.password.show ? error.password.message : ""}
           placeholder="Digite a sua senha:"
           type="password"
-          sx={{ width: "100%", margin: 1 }}
+          className={styles.input}
         />
-        <Grid
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            marginTop: 2,
-            width: "100%",
-          }}
-        >
+        <Grid className={styles.buttonContainer}>
           <Button
             loading={loading}
             variant="contained"
-            sx={{ margin: 1, fontSize: "1rem" }}
+            className={styles.button}
             onClick={handleLogin}
           >
             {" "}
@@ -156,7 +122,7 @@ export default function Login({ onLoginSuccess }) {
 
           <Button
             variant="contained"
-            sx={{ margin: 1, fontSize: "1rem" }}
+            className={styles.button}
             onClick={() => navigate(RoutesPath.REGISTRO)}
           >
             Registrar
@@ -164,7 +130,7 @@ export default function Login({ onLoginSuccess }) {
 
           <Button
             variant="contained"
-            sx={{ margin: 1, fontSize: "1rem" }}
+            className={styles.button}
             onClick={() => navigate(RoutesPath.ESQUECI_SENHA)}
           >
             {" "}

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.module.css";
 import { useEffect, useState } from "react";
 import React from "react";
 import Login from "./Pages/Login";

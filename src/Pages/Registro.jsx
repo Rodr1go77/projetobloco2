@@ -23,6 +23,7 @@ container: {
 avatar: {
   width: 250,
   height: 250,
+  borderRadius: 0
 }
 };
 
