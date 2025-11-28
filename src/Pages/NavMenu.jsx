@@ -30,25 +30,25 @@ export default function NavMenu() {
         <Link className={styles.menuItem} to={RoutesPath.LISTA_PARTIDAS}>
           Home
         </Link>
-        <Link className={styles.menuItem} to={RoutesPath.ANALISE_PARTIDA}>
+        {/* <Link className={styles.menuItem} to={RoutesPath.ANALISE_PARTIDA}>
           Análise
+          </Link> */}
+        <Link className={styles.menuItem} to={RoutesPath.PERFIL}>
+          Perfil
         </Link>
         <Link className={styles.menuItem} to={RoutesPath.JOGO_RESPONSAVEL}>
           Jogo Responsável
         </Link>
-        <Link className={styles.menuItem} to={RoutesPath.PERFIL}>
-          Perfil
-        </Link>
-        <Link className={styles.menuItem} to={RoutesPath.REGISTRO}>
+        {/* <Link className={styles.menuItem} to={RoutesPath.REGISTRO}>
           Registrar
-        </Link>
-        <Link className={styles.menuItem} to={RoutesPath.ESQUECI_SENHA}>
+        </Link> */}
+        {/* <Link className={styles.menuItem} to={RoutesPath.ESQUECI_SENHA}>
           Esqueci Senha
-        </Link>
+        </Link> */}
 
         {userEmail && (
           <div className={styles.userInfo}>
-            <p className={styles.userLabel}>Usuário: </p> 
+            <p className={styles.userLabel}>Usuário: </p>
             {userEmail}
           </div>
         )}

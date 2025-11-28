@@ -20,7 +20,7 @@
     font-weight: 900 !important;
     font-size: 2rem !important;
     text-align: center;
-    color: white !important;
+    color: #1976d2 !important;
     padding: 8px;
 }
 
@@ -38,7 +38,7 @@
     transition: 0.2s;
     cursor: pointer;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 16px;
     background-color: #AAC4F5 !important;
     display: flex;
     flex-direction: column;
@@ -49,11 +49,12 @@
 .card:hover {
     transform: scale(1.05);
     border: 1px solid #1976d2;
+    background-color: #b8cef7 !important;
 }
 
 .cardTitle {
-    font-weight: bold;
-    color: #185491;
+    font-weight: 900 !important;
+    color: #185491 !important;
     text-transform: uppercase;
     text-align: center;
 }

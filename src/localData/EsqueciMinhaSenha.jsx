@@ -4,11 +4,9 @@ import { Button, Typography, Grid, TextField, Stack, Avatar, Snackbar } from "..
 import logo1 from "../assets/images/logo1.png";
 import Authentication from "../services/Authentication";
 import { modeloData } from "../services/modelo";
-// import { supabase } from "./services/supabaseClient";
-import styles from "./Registro.module.css";
+import styles from "./EsqueciMinhaSenha.module.css";
 
-export default function Registro() {
-
+export default function EsqueciMinhaSenha() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -94,72 +92,92 @@ export default function Registro() {
       justifyContent="center"
       alignItems="center"
     >
+      <Typography
+        sx={{
+          fontWeight: "bolder",
+          fontSize: "2rem",
+          textAlign: "center",
+          color: "white",
+          p: 1,
+        }}
+      >
+        Troca de Senha
+      </Typography>
+
       <Grid
-        size={{ xs: 12, sm: 12, md: 4, lg: 4, xl: 3 }}
-        className={styles.registerBox}
+        id="containerTitulo"
+        item
+        xs={12}
+        sm={12}
+        md={10}
+        lg={8}
+        xl={6}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          border: "2px solid #1976d2",
+          borderRadius: "4px",
+          width: "100%",
+          margin: "0 auto",
+          backgroundColor: "#AAC4F5",
+        }}
       >
 
 
 
 
-        
-        <Stack direction="row" spacing={2} className={styles.stack}>
-          <Avatar src={logo1} className={styles.avatar} ></Avatar>
-        </Stack>
-        <Typography marginBottom={1}> Cadastro de Usuário</Typography>
-        <TextField
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          label="E-mail"
-          type="email"
-          placeholder="Digite um e-mail válido:"
-          error={error.email.show}
-          helperText={error.email.show ? error.email.message : ""}
-          className={styles.input}
-        />
-        <TextField
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          label="Senha"
-          placeholder="Digite sua senha:"
-          type="password"
-          error={error.password.show}
-          helperText={error.password.show ? error.password.message : ""}
-          className={styles.input}
-        />
-        <TextField
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="Confirme sua senha:"
-          label="Confimar senha"
-          type="password"
-          error={error.confirmPassword.show}
-          helperText={error.confirmPassword.show ? error.confirmPassword.message : ""}
-          className={styles.input}
-        />
+        <Grid
+          size={{ xs: 12, sm: 12, md: 4, lg: 4, xl: 3 }}
+          className={styles.changePasswordBox}
+        >
+          <Stack direction="row" spacing={2} className={styles.stack}>
+            <Avatar src={logo1} className={styles.avatar} ></Avatar>
+          </Stack>
+          <Typography marginBottom={1}> Troca de Senha</Typography>
 
-        <Grid className={styles.buttonContainer}>
-          <Button
-            loading={loading}
-            variant="contained"
-            className={styles.button}
-            onClick={handleRegister}
-          > Registrar-se
-          </Button>
+          <TextField
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            label="Senha"
+            placeholder="Digite a nova senha:"
+            type="password"
+            error={error.password.show}
+            helperText={error.password.show ? error.password.message : ""}
+            className={styles.input}
+          />
+          <TextField
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirme a nova senha:"
+            label="Confimar senha"
+            type="password"
+            error={error.confirmPassword.show}
+            helperText={error.confirmPassword.show ? error.confirmPassword.message : ""}
+            className={styles.input}
+          />
+          <Grid className={styles.buttonContainer}>
+            <Button
+              loading={loading}
+              variant="contained"
+              className={styles.button}
+              onClick={handleRegister}
+            > Trocar Senha
+            </Button>
+          </Grid>
+          <Snackbar
+            open={message !== ""}
+            autoHideDuration={3000}
+            onClose={() => setMessage("")}
+            message={message}
+            severity="info"
+          />
         </Grid>
-        <Snackbar
-          open={message !== ""}
-          autoHideDuration={3000}
-          onClose={() => setMessage("")}
-          message={message}
-          severity="info"
-        />
-      </Grid>
-    
-    
-    
-    
-    </Grid>
 
-  );
+
+      </Grid>
+
+      );
 }

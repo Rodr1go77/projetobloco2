@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 86vh;
+    width: 100%;
+}
+
+.changePasswordBox {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #1976d2;
+    border-radius: 17px;
+    background-color: #e6e2e2;
+    padding: 32px 32px;
+    box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.stack {
+    color: #080808;
+    padding: 0;
+    text-align: center;
+}
+
+.avatar {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 0 !important;
+}
+
+.input {
+    width: 82%;
+    margin: 6px !important;
+
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    width: 85%;
+}
+
+.button {
+    margin: 6px !important;
+    font-size: 0.8rem !important;
+}

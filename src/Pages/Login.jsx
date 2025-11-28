@@ -26,7 +26,6 @@ export default function Login({ onLoginSuccess }) {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    setLoading(true);
     setError(modeloData);
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -52,6 +51,7 @@ export default function Login({ onLoginSuccess }) {
       return;
     }
     try {
+      setLoading(true);
       const { data, error } = await Authentication.login(email, password);
       if (error) {
         throw error;
@@ -125,7 +125,7 @@ export default function Login({ onLoginSuccess }) {
             className={styles.button}
             onClick={() => navigate(RoutesPath.REGISTRO)}
           >
-            Registrar
+            Criar Conta
           </Button>
 
           <Button
