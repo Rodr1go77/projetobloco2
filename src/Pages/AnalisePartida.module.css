@@ -1,0 +1,115 @@
+.containerGeral {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerTitulo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #1976d2;
+    border-radius: 4px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #AAC4F5;
+}
+
+.pageTitle {
+    font-weight: bolder !important;
+    font-size: 1.5rem !important;
+    text-align: center !important;
+    color: white !important;
+    padding-top: 16px !important;
+    line-height: 1.5 !important;
+}
+
+.matchTitle {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    color: #064c91 !important;
+    text-align: center !important;
+    padding-bottom: 16px !important;
+    line-height: 1 !important;
+}
+
+.boxOdds {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #1976d2;
+    border-radius: 4px;
+    padding-left: 24px;
+    /* pl: 3 */
+    padding-right: 24px;
+    /* pr: 3 */
+    padding-top: 12px;
+    /* pt: 1.5 */
+    padding-bottom: 12px;
+    /* pb: 1.5 */
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    /* mx: auto */
+}
+
+.oddsTitle {
+    font-weight: bold;
+    color: steelblue;
+    padding-bottom: 8px;
+    /* pb: 1 */
+    font-size: 1.5rem;
+}
+
+.boxVencedor {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: red;
+}
+
+.containerInfo {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 16px;
+    /* gap: 2 */
+}
+
+.boxInfo {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #1976d2;
+    border-radius: 8px;
+    padding: 16px;
+    /* p: 2 */
+    background-color: white;
+    flex: 1;
+}
+
+.sectionTitle {
+    font-weight: bold;
+    color: steelblue;
+    padding-bottom: 8px;
+    /* pb: 1 */
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.divider {
+    line-height: 1.8;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    /* mb: 1 */
+}
+
+.list {
+    max-height: auto;
+    overflow-y: auto;
+    width: 100%;
+}

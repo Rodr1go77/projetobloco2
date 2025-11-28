@@ -3,6 +3,7 @@ import { List, ListItem, Divider } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getMatchById } from "../services/getMatchById";
 import { useParams } from "react-router-dom";
+import styles from "./AnalisePartida.module.css";
 
 export default function AnalisePartida() {
   const [matchData, setMatchData] = useState(null);
@@ -12,7 +13,7 @@ export default function AnalisePartida() {
     str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
   const lineups = matchData?.lineups?.lineups ?? null;
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     async function loadData() {
@@ -46,11 +47,7 @@ export default function AnalisePartida() {
       id="containerGeral"
       container
       spacing={2}
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
+      className={styles.containerGeral}
     >
       <Grid
         id="containerTitulo"
@@ -60,72 +57,22 @@ export default function AnalisePartida() {
         md={10}
         lg={8}
         xl={6}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          border: "2px solid #1976d2",
-          borderRadius: "4px",
-          width: "100%",
-          margin: "0 auto",
-          backgroundColor: "#AAC4F5",
-        }}
+        className={styles.containerTitulo}
       >
-        <Typography
-          sx={{
-            fontWeight: "bolder",
-            fontSize: "1.5rem",
-            textAlign: "center",
-            color: "white",
-            pt: 2,
-            lineHeight: 1.5,
-          }}
-        >
+        <Typography className={styles.pageTitle}>
           Análise da Partida
         </Typography>
 
-        <Typography
-          sx={{
-            fontSize: "2rem",
-            fontWeight: "bold",
-            color: "#064c91ff",
-            textAlign: "center",
-            pb: 2,
-            lineHeight: 1,
-          }}
-        >
+        <Typography className={styles.matchTitle}>
           {matchData.teams.home.name} vs {matchData.teams.away.name}
         </Typography>
       </Grid>
 
       <Box
         id="boxOdds"
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-          border: "2px solid #1976d2",
-          borderRadius: "4px",
-          pl: 3,
-          pr: 3,
-          pt: 1.5,
-          pb: 1.5,
-          bgcolor: "white",
-          width: "50%",
-          mx: "auto",
-        }}
+        className={styles.boxOdds}
       >
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            color: "steelblue",
-            pb: 1,
-            fontSize: "1.5rem",
-          }}
-        >
+        <Typography className={styles.oddsTitle}>
           Odds da partida
         </Typography>
 
@@ -138,13 +85,7 @@ export default function AnalisePartida() {
 
       <Box
         id="boxVencedor"
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-          color: "red",
-        }}
+        className={styles.boxVencedor}
       >
         <Typography variant="h5">
           {" "}
@@ -158,46 +99,18 @@ export default function AnalisePartida() {
         </Typography>
       </Box>
 
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "flex-start",
-          width: "100%",
-          gap: 2,
-        }}
-      >
+      <Box className={styles.containerInfo}>
         <Box
           id="BoxServicoJogo"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            border: "2px solid #1976d2",
-            borderRadius: "8px",
-            p: 2,
-            bgcolor: "white",
-            flex: 1,
-          }}
+          className={styles.boxInfo}
         >
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              color: "steelblue",
-              pb: 1,
-              fontSize: "1.5rem",
-              textAlign: "center",
-            }}
-          >
+          <Typography className={styles.sectionTitle}>
             Serviço do Jogo
           </Typography>
 
           <Divider
             textAlign="center"
-            sx={{
-              lineHeight: 1.8,
-              fontSize: "1rem",
-              fontWeight: "bold",
-              mb: 1,
-            }}
+            className={styles.divider}
           ></Divider>
 
           <Typography variant="body1" sx={{ lineHeight: 2 }} align="left">
@@ -212,36 +125,20 @@ export default function AnalisePartida() {
 
         <Box
           id="BoxEscalacoes"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            border: "2px solid #1976d2",
-            borderRadius: "8px",
-            p: 2,
-            bgcolor: "white",
-            flex: 1,
-          }}
+          className={styles.boxInfo}
         >
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              color: "steelblue",
-              pb: 1,
-              fontSize: "1.5rem",
-              textAlign: "center",
-            }}
-          >
+          <Typography className={styles.sectionTitle}>
             Escalações
           </Typography>
 
           <Divider
             textAlign="center"
-            sx={{ lineHeight: 1.8, fontSize: "1rem", fontWeight: "bold" }}
+            className={styles.divider}
           >
             {matchData.teams.home.name}
           </Divider>
 
-          {lineups.home.map((p) => (
+          {lineups?.home?.map((p) => (
             <Typography key={p.player.id} sx={{ lineHeight: 1.8 }}>
               {p.player.name} ({p.position})
             </Typography>
@@ -249,12 +146,12 @@ export default function AnalisePartida() {
           <br />
           <Divider
             textAlign="center"
-            sx={{ lineHeight: 1.8, fontSize: "1rem", fontWeight: "bold" }}
+            className={styles.divider}
           >
             {matchData.teams.away.name}
           </Divider>
 
-          {lineups.away.map((p) => (
+          {lineups?.away?.map((p) => (
             <Typography key={p.player.id} sx={{ lineHeight: 1.8 }}>
               {p.player.name} ({p.position})
             </Typography>
@@ -263,44 +160,17 @@ export default function AnalisePartida() {
 
         <Box
           id="boxEventos"
-          sx={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            border: "2px solid #1976d2",
-            borderRadius: "8px",
-            p: 2,
-            bgcolor: "white",
-          }}
+          className={styles.boxInfo}
         >
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              color: "steelblue",
-              pb: 1,
-              fontSize: "1.5rem",
-              textAlign: "center",
-            }}
-          >
+          <Typography className={styles.sectionTitle}>
             Eventos da Partida
           </Typography>
           <Divider
             textAlign="center"
-            sx={{
-              lineHeight: 1.8,
-              fontSize: "1rem",
-              fontWeight: "bold",
-              mb: 1,
-            }}
+            className={styles.divider}
           ></Divider>
-          <List
-            sx={{
-              maxHeight: "auto",
-              overflowY: "auto",
-              width: "100%",
-            }}
-          >
-            {matchData.events.map((event, index) => (
+          <List className={styles.list}>
+            {matchData.events?.map((event, index) => (
               <ListItem key={index} sx={{ py: 1 }}>
                 <Typography variant="body2">
                   <b>{event.event_minute}'</b> - {event.event_type} (
