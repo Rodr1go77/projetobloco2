@@ -20,7 +20,6 @@ import {
 import RoutesPath from "./routes/RoutesPath";
 import AuthLayout from "./layout/AuthLayout";
 import PublicLayout from "./layout/PublicLayout";
-import { supabase } from "./services/supabaseClient";
 
 const theme = createTheme({
   palette: {
