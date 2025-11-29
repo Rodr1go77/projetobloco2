@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { Button, Typography, Grid, TextField, Stack, Avatar, Snackbar } from "../Components";
 import logo1 from "../assets/images/logo1.png";
@@ -9,14 +8,13 @@ import styles from "./EsqueciMinhaSenha.module.css";
 export default function EsqueciMinhaSenha() {
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(modeloData);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const handleRegister = async () => {
+  const handleForgotPassword = async () => {
     setError(modeloData);
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email === '') {
@@ -26,6 +24,7 @@ export default function EsqueciMinhaSenha() {
       }));
       return;
     }
+
     if (!emailRegex.test(email)) {
       setError((prev) => ({
         ...prev,
@@ -33,54 +32,21 @@ export default function EsqueciMinhaSenha() {
       }));
       return;
     }
-    if (password === "") {
-      setError((prev) => ({
-        ...prev,
-        password: { message: "Senha é obrigatória.", show: true },
-      }));
-      return;
-    }
-    if (password.length < 8) {
-      setError((prev) => ({
-        ...prev,
-        password: { message: "A senha deve ter pelo menos 8 caracteres.", show: true },
-      }));
-      return;
-    }
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/;
-    if (!passwordRegex.test(password)) {
-      setError((prev) => ({
-        ...prev,
-        password: { message: 'A senha deve conter pelo menos uma letra maiúscula, uma minúscula, um número e um caractere especial', show: true }
-      }));
-      return;
-    }
-    if (confirmPassword === "") {
-      setError((prev) => ({
-        ...prev,
-        confirmPassword: { message: "Confirmação de senha é obrigatória.", show: true },
-      }));
-      return;
-    }
-    if (password !== confirmPassword) {
-      setError((prev) => ({
-        ...prev,
-        confirmPassword: { message: "As senhas não coincidem.", show: true },
-      }));
-      return;
-    }
+
     try {
       setLoading(true);
-      const { data, error } = await Authentication.register(email, password);
+
+      const { error } = await Authentication.forgotPassword(email);
+
       if (error) {
         throw error;
       }
-      setMessage("Usuário registrado com sucesso!");
-      console.log(data)
-      console.log(JSON.stringify(data))
+
+      setMessage("Enviamos um link para o seu e-mail!");
+
     } catch (error) {
-      setMessage("Erro ao registrar usuário:" + error.message);
-      console.log("Falha no registro", error)
+      setMessage("Erro ao enviar e-mail:" + error.message);
+      console.log("Falha no envio do email de redefinição de senha", error)
     }
     setLoading(false);
   }
@@ -100,33 +66,26 @@ export default function EsqueciMinhaSenha() {
         <Stack direction="row" spacing={2} className={styles.stack}>
           <Avatar src={logo1} className={styles.avatar} ></Avatar>
         </Stack>
-        <Typography marginBottom={1}> Troca de Senha</Typography>
+      <Typography marginBottom={1}> Esqueci minha senha</Typography>
 
-        <TextField
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Digite a nova senha:"
-          type="password"
-          error={error.password.show}
-          helperText={error.password.show ? error.password.message : ""}
-          className={styles.input}
-        />
-        <TextField
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="Confirme a nova senha:"
-          type="password"
-          error={error.confirmPassword.show}
-          helperText={error.confirmPassword.show ? error.confirmPassword.message : ""}
-          className={styles.input}
-        />
         <Grid className={styles.buttonContainer}>
+
+          <TextField
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            error={error.email.show}
+            helperText={error.email.show ? error.email.message : ""}
+            type="email"
+            placeholder="Digite seu e-mail de login:"
+            className={styles.input}
+          />
+
           <Button
             loading={loading}
             variant="contained"
             className={styles.button}
-            onClick={handleRegister}
-          > Trocar Senha
+              onClick={handleForgotPassword}
+          > Enviar e-mail de redefinição de senha
           </Button>
         </Grid>
         <Snackbar

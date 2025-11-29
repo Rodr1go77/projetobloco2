@@ -6,6 +6,7 @@ const RoutesPath = {
   PERFIL: "/perfil",
   ANALISE_PARTIDA: "/analisePartida/:id",
   JOGO_RESPONSAVEL: "/jogoResponsavel",
+  RESETAR_SENHA: "/redefinirSenha",
 };
 
 export default RoutesPath;

@@ -1,21 +1,26 @@
 import "./App.module.css";
 import { useEffect, useState } from "react";
-import React from "react";
 import Login from "./Pages/Login";
 import Registro from "./Pages/Registro";
 import EsqueciMinhaSenha from "./Pages/EsqueciMinhaSenha";
 import ListaPartidas from "./Pages/ListaPartidas";
 import AnalisePartida from "./Pages/AnalisePartida";
+import RedefinirSenha from "./Pages/RedefinirSenha";
 import Perfil from "./Pages/Perfil";
 import JogoResponsavel from "./Pages/JogoResponsavel";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Authentication from "./services/Authentication";
-import { Routes, Route, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import RoutesPath from "./routes/RoutesPath";
 import AuthLayout from "./layout/AuthLayout";
 import PublicLayout from "./layout/PublicLayout";
-
-// import { supabase } from "./services/supabaseClient";
+import { supabase } from "./services/supabaseClient";
 
 const theme = createTheme({
   palette: {
@@ -41,44 +46,51 @@ export default function App() {
     checkAuth();
   }, []);
 
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/">
+        <Route
+          path="/"
+          element={<Navigate to={RoutesPath.LOGIN} replace />}
+        />
+        {/* Publicas */}
+        <Route
+          path={RoutesPath.LOGIN}
+          element={<Login onLoginSuccess={() => setIsAuthenticated(true)} />}
+        />
+        <Route element={<PublicLayout />}>
+          <Route
+            path={RoutesPath.ESQUECI_SENHA}
+            element={<EsqueciMinhaSenha />}
+          />
+          <Route path={RoutesPath.REGISTRO} element={<Registro />} />
+          <Route path={RoutesPath.RESETAR_SENHA} element={<RedefinirSenha />} />
+        </Route>
+
+        {/* Privadas */}
+        <Route element={<AuthLayout isAuthenticated={isAuthenticated} />}>
+          <Route
+            path={RoutesPath.LISTA_PARTIDAS}
+            element={<ListaPartidas />}
+          />
+          <Route
+            path={RoutesPath.ANALISE_PARTIDA}
+            element={<AnalisePartida />}
+          />
+          <Route path={RoutesPath.PERFIL} element={<Perfil />} />
+          <Route
+            path={RoutesPath.JOGO_RESPONSAVEL}
+            element={<JogoResponsavel />}
+          />
+        </Route>
+      </Route>
+    )
+  );
+
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Routes>
-          <Route
-            path="/"
-            element={<Navigate to={RoutesPath.LOGIN} replace />}
-          />
-          {/* Publicas */}
-          <Route
-            path={RoutesPath.LOGIN}
-            element={<Login onLoginSuccess={() => setIsAuthenticated(true)} />}
-          />
-          <Route element={<PublicLayout />}>
-            <Route
-              path={RoutesPath.ESQUECI_SENHA}
-              element={<EsqueciMinhaSenha />}
-            />
-            <Route path={RoutesPath.REGISTRO} element={<Registro />} />
-          </Route>
-
-          {/* Privadas */}
-          <Route element={<AuthLayout isAuthenticated={isAuthenticated} />}>
-            <Route
-              path={RoutesPath.LISTA_PARTIDAS}
-              element={<ListaPartidas />}
-            />
-            <Route
-              path={RoutesPath.ANALISE_PARTIDA}
-              element={<AnalisePartida />}
-            />
-            <Route path={RoutesPath.PERFIL} element={<Perfil />} />
-            <Route
-              path={RoutesPath.JOGO_RESPONSAVEL}
-              element={<JogoResponsavel />}
-            />
-          </Route>
-        </Routes>
+        <RouterProvider router={router} />
       </ThemeProvider>
     </>
   );
