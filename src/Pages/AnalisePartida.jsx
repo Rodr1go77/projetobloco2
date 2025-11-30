@@ -68,38 +68,75 @@ export default function AnalisePartida() {
         </Typography>
       </Grid>
 
-      <Box
-        id="boxOdds"
-        className={styles.boxOdds}
-      >
-        <Typography className={styles.oddsTitle}>
-          Odds da partida
-        </Typography>
+      <Box className={styles.containerInfo1}>
 
-        <Typography variant="h5" sx={{ pb: 1 }}>
-          {matchData.teams.home.name} - {matchData.odds.match_winner.home} -
-          Empate - {matchData.odds.match_winner.draw} -{" "}
-          {matchData.teams.away.name} - {matchData.odds.match_winner.away}
-        </Typography>
+        <Box
+          id="boxOdds"
+          className={styles.boxOdds}
+        >
+          <Typography className={styles.oddsTitle}>
+            Odds da partida
+          </Typography>
+
+          <Box className={styles.teamsRow}>
+            <Box className={styles.boxTeamA}>
+              <Typography variant="h5" sx={{ pb: 1 }}>
+                {matchData.teams.home.name}
+              </Typography>
+            </Box>
+            <Box className={styles.boxDraw}>
+              <Typography variant="h5" sx={{ pb: 1 }}>
+                Empate
+              </Typography>
+            </Box>
+            <Box className={styles.boxTeamB}>
+              <Typography variant="h5" sx={{ pb: 1 }}>
+                {matchData.teams.away.name}
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box className={styles.oddsRow}>
+            <Box className={styles.boxOddsTeamA}>
+              <Typography variant="h5" >
+                {matchData.odds.match_winner.home}
+              </Typography>
+            </Box>
+            <Box className={styles.boxOddsDraw}>
+              <Typography variant="h5">
+                {matchData.odds.match_winner.draw}
+              </Typography>
+            </Box>
+            <Box className={styles.boxOddsTeamB}>
+              <Typography variant="h5" >
+                {matchData.odds.match_winner.away}
+              </Typography>
+            </Box>
+          </Box>
+
+        </Box>
+
+        <Box
+          id="boxVencedor"
+          className={styles.boxVencedor}
+        >
+          <Typography variant="h5" sx={{ pb: 1 }}>
+            Vencedor da Partida
+          </Typography>
+          <Typography variant="h5" sx={{ fontWeight: 'bold' }}  >
+            {matchData.winner === "home"
+              ? matchData.teams.home.name
+              : matchData.winner === "away"
+                ? matchData.teams.away.name
+                : "Empate"}{" "}
+            <br />
+          </Typography>
+        </Box>
       </Box>
 
-      <Box
-        id="boxVencedor"
-        className={styles.boxVencedor}
-      >
-        <Typography variant="h5">
-          {" "}
-          Vencedor da Partida:{" "}
-          {matchData.winner === "home"
-            ? matchData.teams.home.name
-            : matchData.winner === "away"
-              ? matchData.teams.away.name
-              : "Empate"}{" "}
-          <br />
-        </Typography>
-      </Box>
+      <Box className={styles.containerInfo2}>
 
-      <Box className={styles.containerInfo}>
+
         <Box
           id="BoxServicoJogo"
           className={styles.boxInfo}
@@ -111,8 +148,8 @@ export default function AnalisePartida() {
           <Divider
             textAlign="center"
             className={styles.divider}
-          ></Divider>
-
+          >
+          </Divider>
           <Typography variant="body1" sx={{ lineHeight: 2 }} align="left">
             Data da partida: {matchData.date} <br />
             Horário do jogo: {matchData.time} <br />
@@ -172,7 +209,7 @@ export default function AnalisePartida() {
           <List className={styles.list}>
             {matchData.events?.map((event, index) => (
               <ListItem key={index} sx={{ py: 1 }}>
-                <Typography variant="body2">
+                <Typography variant="body1">
                   <b>{event.event_minute}'</b> - {event.event_type} (
                   {event.team})
                 </Typography>

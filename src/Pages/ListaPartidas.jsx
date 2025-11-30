@@ -15,26 +15,43 @@ export default function ListaPartidas() {
     return team.name;
   };
 
+  const toDate = (dateStr) => {
+    if (!dateStr) return null;
+    const [d, m, y] = dateStr.split("/");
+    return new Date(`${y}-${m}-${d}`);
+  };
+
+
+
   useEffect(() => {
-    async function load() {
+    async function loadMatches() {
       try {
         setLoading(true);
         const response = await getMatches();
+        const allMatches = response?.results ?? [];
         setLeagueHeader(response.leagueHeader);
-        const allMatches = response.results || [];
-        const validMatches = allMatches.filter(
-          (match) =>
-            match?.teams?.home?.name &&
-            match?.teams?.home?.name !== "None" &&
-            match?.teams?.away?.name &&
-            match?.teams?.away?.name !== "None"
-        );
-        setMatches(validMatches.slice(0, 30));
+        const cutoffDate = toDate("01/11/2025");
+        const validMatches = allMatches.filter((match) => {
+          const home = match?.teams?.home?.name;
+          const away = match?.teams?.away?.name;
+          const matchDate = toDate(match?.date);
+
+          return (
+            home &&
+            home !== "None" &&
+            away &&
+            away !== "None" &&
+            matchDate &&
+            matchDate >= cutoffDate
+          );
+        });
+
+        setMatches(validMatches.slice(0, 150));
       } finally {
         setLoading(false);
       }
     }
-    load();
+    loadMatches();
   }, []);
 
   if (loading) {

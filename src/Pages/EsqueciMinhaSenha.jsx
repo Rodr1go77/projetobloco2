@@ -66,7 +66,7 @@ export default function EsqueciMinhaSenha() {
         <Stack direction="row" spacing={2} className={styles.stack}>
           <Avatar src={logo1} className={styles.avatar} ></Avatar>
         </Stack>
-      <Typography marginBottom={1}> Esqueci minha senha</Typography>
+        <Typography marginBottom={1}> Esqueci minha senha</Typography>
 
         <Grid className={styles.buttonContainer}>
 
@@ -84,7 +84,7 @@ export default function EsqueciMinhaSenha() {
             loading={loading}
             variant="contained"
             className={styles.button}
-              onClick={handleForgotPassword}
+            onClick={handleForgotPassword}
           > Enviar e-mail de redefinição de senha
           </Button>
         </Grid>
@@ -100,3 +100,6 @@ export default function EsqueciMinhaSenha() {
 
   );
 }
+
+
+

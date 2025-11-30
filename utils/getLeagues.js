@@ -1,21 +1,16 @@
-/*  Códigos dos Países - Plano básico
-Usa	1
-China	3
-Europe	4
-Italy	6
-Netherlands	7
-England	8
-France	9
-Scotland	21
-Germany	27
-Portugal	41
-Spain	60
+/*  Códigos dos Países escolhidos e ligas da primeira divisao - Plano básico
+Italy	6 - 253
+
+England	8 - 228
+France	9 - 235
+Germany	27 - 241
+Spain	60 - 297
 */
 
 async function getLeagues() {
   try {
     const response = await fetch(
-      "https://api.soccerdataapi.com/league/?country_id=8&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3",
+      "https://api.soccerdataapi.com/league/?country_id=6&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3",
       {
         method: "GET",
         headers: {

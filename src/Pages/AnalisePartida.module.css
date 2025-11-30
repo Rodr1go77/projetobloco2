@@ -1,3 +1,4 @@
+
 .containerGeral {
     display: flex;
     justify-content: center;
@@ -13,71 +14,118 @@
     border: 2px solid #1976d2;
     border-radius: 4px;
     width: 100%;
-    margin: 0 auto;
+    margin: 10px 0px 0px 0px;
     background-color: #AAC4F5;
 }
 
 .pageTitle {
     font-weight: bolder !important;
-    font-size: 1.5rem !important;
-    text-align: center !important;
-    color: white !important;
-    padding-top: 16px !important;
-    line-height: 1.5 !important;
+    font-size: 2rem !important;
+    text-align: center;
+    color: white;
+    padding-top: 4px;
+    line-height: 1.5;
 }
 
 .matchTitle {
     font-size: 2rem !important;
     font-weight: bold !important;
     color: #064c91 !important;
-    text-align: center !important;
-    padding-bottom: 16px !important;
+    text-align: center;
+    padding-bottom: 16px;
     line-height: 1 !important;
+}
+
+.containerInfo1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
 }
 
 .boxOdds {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
+    width: 97%;
+    padding: 12px 16px;
     border: 2px solid #1976d2;
     border-radius: 4px;
-    padding-left: 24px;
-    /* pl: 3 */
-    padding-right: 24px;
-    /* pr: 3 */
-    padding-top: 12px;
-    /* pt: 1.5 */
-    padding-bottom: 12px;
-    /* pb: 1.5 */
     background-color: white;
-    width: 50%;
-    margin: 0 auto;
-    /* mx: auto */
 }
 
 .oddsTitle {
-    font-weight: bold;
-    color: steelblue;
+    font-weight: bold !important;
+    color:  #064c91;
+    font-size: 1.7rem !important;
+    text-align: center;
+    margin: 0;
     padding-bottom: 8px;
-    /* pb: 1 */
-    font-size: 1.5rem;
 }
+
+.teamsRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 10px;
+    margin: 0;
+
+}
+
+.oddsRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 10px;
+}
+
+.boxTeamA,
+.boxDraw,
+.boxTeamB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.boxOddsTeamA,
+.boxOddsDraw,
+.boxOddsTeamB {
+    text-align: center;
+    border: 2px solid #1976d2;
+    border-radius: 4px;
+    background-color: #AAC4F5;
+    /* color: white; */
+    color: #064c91 !important;
+    padding: 5px 25px;
+    font-weight: 900 !important;
+}
+
 
 .boxVencedor {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     color: red;
+    width: 50%;
+    padding: 8px 0;
+    border: 2px solid #1976d2;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 2rem !important;
+    font-weight: bold !important;
 }
 
-.containerInfo {
+.containerInfo2 {
     display: flex;
     justify-content: flex-start;
     width: 100%;
     gap: 16px;
-    /* gap: 2 */
 }
 
 .boxInfo {
@@ -86,18 +134,19 @@
     border: 2px solid #1976d2;
     border-radius: 8px;
     padding: 16px;
-    /* p: 2 */
     background-color: white;
     flex: 1;
 }
+
 
 .sectionTitle {
     font-weight: bold;
     color: steelblue;
     padding-bottom: 8px;
     /* pb: 1 */
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     text-align: center;
+    font-weight: bold !important;
 }
 
 .divider {
