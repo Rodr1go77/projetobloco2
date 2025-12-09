@@ -5,7 +5,7 @@ import RoutesPath from "../routes/RoutesPath";
 
 export default function AuthLayout({ isAuthenticated }) {
 
-  const dev_preview = false
+  const dev_preview = true
 
   if (!isAuthenticated && !dev_preview) {
     return <Navigate to={RoutesPath.LOGIN} replace />

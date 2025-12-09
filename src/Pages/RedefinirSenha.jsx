@@ -74,6 +74,7 @@ export default function RedefinirSenha() {
         setError(modeloData);
 
         const validacao = validaCampoSenha();
+        
         if (validacao) {
             setError((prev) => ({
                 ...prev,
