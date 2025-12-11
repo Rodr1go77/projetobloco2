@@ -13,6 +13,7 @@ export { default as CardHeader } from "./default/CardHeader";
 export { default as CardMedia } from "./default/CardMedia";
 export { default as DatePicker } from "./default/DatePicker";
 export { default as DateTimePicker } from "./default/DateTimePicker";
+export { default as Divider } from "./customs/Divider";
 export { default as Fab } from "./default/Fab";
 export { default as Filter } from "./default/Filter";
 export { default as Grid } from "./customs/Grid";

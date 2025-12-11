@@ -1,4 +1,4 @@
-import { Grid, Typography, Card, SearchBar } from "../Components";
+import { Grid, Typography, Card, Box } from "../Components";
 import { useEffect, useState } from "react";
 import { getMatches } from "../services/getMatches";
 import { useNavigate } from "react-router-dom";
@@ -21,8 +21,6 @@ export default function ListaPartidas() {
     return new Date(`${y}-${m}-${d}`);
   };
 
-
-
   useEffect(() => {
     async function loadMatches() {
       try {
@@ -30,7 +28,7 @@ export default function ListaPartidas() {
         const response = await getMatches();
         const allMatches = response?.results ?? [];
         setLeagueHeader(response.leagueHeader);
-        const cutoffDate = toDate("01/11/2025");
+        const cutoffDate = toDate("01/12/2025");
         const validMatches = allMatches.filter((match) => {
           const home = match?.teams?.home?.name;
           const away = match?.teams?.away?.name;
@@ -87,10 +85,9 @@ export default function ListaPartidas() {
         spacing={2}
         className={styles.containerGeral}
       >
-
-        <SearchBar
+        {/* <SearchBar
           className={styles.searchBar}
-        />
+        /> */}
 
         <Grid
           id="containerTitulo"
@@ -102,13 +99,10 @@ export default function ListaPartidas() {
           xl={6}
           className={styles.containerTitulo}
         >
-
-
           <Typography className={styles.title}>
-            {leagueHeader?.leagueName || "Carregando liga..."} </Typography>
+            {leagueHeader?.leagueName || "Carregando liga..."}{" "}
+          </Typography>
         </Grid>
-
-
 
         <Grid
           id="containerCards"
@@ -130,26 +124,28 @@ export default function ListaPartidas() {
                 onClick={() => navigate(`/analisePartida/${match.id}`)}
                 className={styles.card}
               >
-                <Typography
-                  variant="subtitle1"
-                  className={styles.cardTitle}
-                >
+                <Typography variant="subtitle1" className={styles.cardTitle}>
                   {getTeamName(match.teams.home)} vs{" "}
                   {getTeamName(match.teams.away)}
                 </Typography>
 
-                <Typography variant="body2" className={styles.cardText}>
-                  Data: {match.date}
-                </Typography>
+                <Box className={styles.boxData}>
+                  <Typography variant="body2" className={styles.cardText}>
+                    Data: {match.date}
+                  </Typography>
 
-                <Typography variant="body2" className={styles.cardText}>
-                  Hora: {match.time}
-                </Typography>
+                  <Typography variant="body2" className={styles.cardText}>
+                    Hora: {match.time}
+                  </Typography>
 
-                <Typography variant="body2" className={styles.cardText}>
-                  Status: {match.status}
-                </Typography>
+                  <Typography variant="body2" className={styles.cardText}>
+                    Status: {match.status}
+                  </Typography>
 
+                  <Typography variant="body2" className={styles.cardText}>
+                    Preview: {match.match_preview.has_preview ? "Sim" : "Não"}
+                  </Typography>
+                </Box>
               </Card>
             </Grid>
           ))}

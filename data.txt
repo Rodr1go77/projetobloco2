@@ -1,9 +1,0 @@
-data:
-0:"AFC"
-1:"OFC"
-2:"CONMEBOL"
-3:"CAF"
-4:"CONCACAF"
-5:"UEFA"
-
-564564

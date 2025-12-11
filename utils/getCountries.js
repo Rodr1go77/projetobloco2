@@ -1,3 +1,14 @@
+// { id: 3, name: 'china' }
+// { id: 8, name: 'england' }
+// { id: 4, name: 'europe' }
+// { id: 9, name: 'france' }
+// { id: 27, name: 'germany' }
+// { id: 6, name: 'italy' }
+// { id: 7, name: 'netherlands' }
+// { id: 41, name: 'portugal' }
+// { id: 21, name: 'scotland' }
+// { id: 60, name: 'spain' }
+
 async function getCountries() {
   try {
     const response = await fetch(
