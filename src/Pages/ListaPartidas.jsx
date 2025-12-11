@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { getMatches } from "../services/getMatches";
 import { useNavigate } from "react-router-dom";
 import styles from "./ListaPartidas.module.css";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 export default function ListaPartidas() {
   const [matches, setMatches] = useState([]);
@@ -102,6 +104,7 @@ export default function ListaPartidas() {
           <Typography className={styles.title}>
             {leagueHeader?.leagueName || "Carregando liga..."}{" "}
           </Typography>
+
         </Grid>
 
         <Grid
@@ -141,12 +144,17 @@ export default function ListaPartidas() {
                   <Typography variant="body2" className={styles.cardText}>
                     Status: {match.status}
                   </Typography>
-
                   <Typography variant="body2" className={styles.cardText}>
-                    Preview: {match.match_preview.has_preview ? "Sim" : "Não"}
+                    Preview:  
+                    {match.match_preview?.has_preview ? (
+                      <VisibilityIcon sx={{ color: "#185491", ml: 0.5 }} />
+                    ) : (
+                      <VisibilityOffIcon sx={{ color: "gray", ml: 0.5 }} />
+                    )}
                   </Typography>
                 </Box>
               </Card>
+
             </Grid>
           ))}
         </Grid>

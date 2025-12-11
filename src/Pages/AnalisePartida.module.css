@@ -1,7 +1,7 @@
 
 .containerGeral {
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -138,6 +138,15 @@
     flex: 1;
 }
 
+.boxPreview {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #1976d2;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: white;
+    flex: 1;
+}
 
 .sectionTitle {
     font-weight: bold;
@@ -161,4 +170,14 @@
     max-height: auto;
     overflow-y: auto;
     width: 100%;
+}
+
+.previewTitle {
+    font-weight: bold !important;
+    color:  #064c91;
+    font-size: 1.7rem !important;
+    text-align: left;
+    margin: 0;
+    padding-bottom: 8px;
+    padding-top: 8px;
 }

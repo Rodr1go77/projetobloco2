@@ -54,6 +54,7 @@ export default function JogoResponsavel() {
           className={styles.divider}
         >
         </Divider>
+
         <Typography variant="body1" sx={{ lineHeight: 1.5, margin: "8px 0" }} align="left">
           Apostar deve ser uma forma de entretenimento — nunca uma ferramenta para resolver problemas financeiros ou emocionais. Jogar com responsabilidade significa <strong>reconhecer os seus limites, tomar decisões conscientes e manter o controle sobre o tempo e o dinheiro investidos.</strong>
         </Typography>
@@ -67,38 +68,56 @@ export default function JogoResponsavel() {
         <List className={styles.list}>
           <ListItem>
             <ListItemIcon>
-              <SportsSoccerIcon sx={{ color: "#1976d2" }}/>
+              <SportsSoccerIcon sx={{ color: "#10be58ff", fontSize: "38px" }}/>
             </ListItemIcon>
             <ListItemText>
               <Typography variant="body1" sx={{ lineHeight: 1.5, margin: "8px 0" }} align="left">
-                Definir previamente um orçamento
+                Definir previamente um orçamento.
               </Typography>
             </ListItemText> 
+          </ListItem>
+          <ListItem>
+            
             <ListItemIcon>
-              <SportsSoccerIcon sx={{ color: "#1976d2" }}/>
+              <SportsSoccerIcon sx={{ color: "#10be58ff", fontSize: "38px" }}/>
             </ListItemIcon>
             <ListItemText>
               <Typography variant="body1" sx={{ lineHeight: 1.5, margin: "8px 0" }} align="left">
-                Evitar perseguir perdas
-              </Typography>
-            </ListItemText>
-            <ListItemIcon>
-              <SportsSoccerIcon sx={{ color: "#1976d2" }} />
-            </ListItemIcon>
-            <ListItemText>
-              <Typography variant="body1" sx={{ lineHeight: 1.5, margin: "8px 0" }} align="left">
-                Fazer pausas regulares
-              </Typography>
-            </ListItemText>
-            <ListItemIcon>
-              <SportsSoccerIcon sx={{ color: "#1976d2" }}/>
-            </ListItemIcon>
-            <ListItemText>
-              <Typography variant="body1" sx={{ lineHeight: 1.5, margin: "8px 0" }} align="left">
-                Se sentir que o jogo está afetando seu bem-estar, procure ajuda especializada ou utilize os recursos disponíveis para limitar depósitos, tempo de jogo ou acesso à plataforma.
+                Evitar perseguir perdas.
               </Typography>
             </ListItemText>
           </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <SportsSoccerIcon sx={{ color: "#10be58ff", fontSize: "38px"   }} />
+            </ListItemIcon>
+            <ListItemText>
+              <Typography variant="body1" sx={{ lineHeight: 1.5, margin: "8px 0" }} align="left">
+                Fazer pausas regulares.
+              </Typography>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+              <ListItemIcon>
+                <SportsSoccerIcon sx={{ color: "#10be58ff", fontSize: "38px"  }}/>
+            </ListItemIcon>
+            <ListItemText>
+              <Typography variant="body1" sx={{ lineHeight: 1.5, margin: "8px 0" }} align="left">
+                 Use recursos da sua plataforma para limitar seus depósitos, o tempo de jogo ou acesso à plataforma.
+              </Typography>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <SportsSoccerIcon sx={{ color: "#c21111ff", fontSize: "38px" }}/>
+            </ListItemIcon>
+            <ListItemText>
+              <Typography variant="body1" sx={{ lineHeight: 1.5, margin: "8px 0" }} align="left">
+                Se sentir que o jogo está afetando seu bem-estar, procure ajuda especializada.
+              </Typography>
+            </ListItemText>
+          </ListItem>
+
         </List>
       </Box>
     </>
