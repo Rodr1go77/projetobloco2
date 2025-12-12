@@ -1,7 +1,7 @@
 async function getPreview() {
   try {
     const response = await fetch(
-      "https://api.soccerdataapi.com/match-preview/?match_id=960670&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3",
+      "https://api.soccerdataapi.com/match-preview/?match_id=954520&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3",
       {
         method: "GET",
         headers: {

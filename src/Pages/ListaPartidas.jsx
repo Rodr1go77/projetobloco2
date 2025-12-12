@@ -1,10 +1,12 @@
-import { Grid, Typography, Card, Box } from "../Components";
+import { Grid, Typography, Card, Box, Avatar } from "../Components";
 import { useEffect, useState } from "react";
 import { getMatches } from "../services/getMatches";
 import { useNavigate } from "react-router-dom";
 import styles from "./ListaPartidas.module.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import logos from "../assets/images/escudos_premier/logos";
+import ClearIcon from "@mui/icons-material/Clear";
 
 export default function ListaPartidas() {
   const [matches, setMatches] = useState([]);
@@ -127,10 +129,24 @@ export default function ListaPartidas() {
                 onClick={() => navigate(`/analisePartida/${match.id}`)}
                 className={styles.card}
               >
+
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2, padding: 2 }}>
+                  <Avatar
+                    src={logos[match.teams.home.name]}
+                    sx={{ width: 50, height: 50, backgroundColor: "white", }}
+                  />
+                  <ClearIcon sx={{ fontSize: 36, color: "#064c91" }} />
+                  <Avatar
+                    src={logos[match.teams.away.name]}
+                    sx={{ width: 50, height: 50, backgroundColor: "white", }}
+                  />
+                </Box>
+
                 <Typography variant="subtitle1" className={styles.cardTitle}>
                   {getTeamName(match.teams.home)} vs{" "}
                   {getTeamName(match.teams.away)}
                 </Typography>
+
 
                 <Box className={styles.boxData}>
                   <Typography variant="body2" className={styles.cardText}>
@@ -145,7 +161,7 @@ export default function ListaPartidas() {
                     Status: {match.status}
                   </Typography>
                   <Typography variant="body2" className={styles.cardText}>
-                    Preview:  
+                    Preview:
                     {match.match_preview?.has_preview ? (
                       <VisibilityIcon sx={{ color: "#185491", ml: 0.5 }} />
                     ) : (
