@@ -3,9 +3,13 @@ import NavMenu from "../Pages/NavMenu"
 import RoutesPath from "../routes/RoutesPath";
 
 
-export default function AuthLayout({ isAuthenticated }) {
+export default function AuthLayout({ isAuthenticated, isLoadingAuth }) {
 
-  const dev_preview = true
+  const dev_preview = false
+
+  if (isLoadingAuth === null) {
+    return null; 
+  }
 
   if (!isAuthenticated && !dev_preview) {
     return <Navigate to={RoutesPath.LOGIN} replace />

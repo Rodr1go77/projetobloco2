@@ -33,14 +33,14 @@ const theme = createTheme({
 });
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
+  const [isLoadingAuth, setIsLoadingAuth] = useState(true);
 
   useEffect(() => {
     const checkAuth = async () => {
-      setTimeout(async () => {
-        const auth = await Authentication.isAuthenticated();
-        setIsAuthenticated(auth);
-      }, 2000);
+      const auth = await Authentication.isAuthenticated();
+      setIsAuthenticated(auth);
+      setIsLoadingAuth(false);
     };
     checkAuth();
   }, []);
@@ -67,7 +67,7 @@ export default function App() {
         </Route>
 
         {/* Privadas */}
-        <Route element={<AuthLayout isAuthenticated={isAuthenticated} />}>
+        <Route element={<AuthLayout isAuthenticated={isAuthenticated} isLoadingAuth={isLoadingAuth} />}>
           <Route
             path={RoutesPath.LISTA_PARTIDAS}
             element={<ListaPartidas />}
