@@ -33,9 +33,9 @@ export default function NavMenu() {
         {/* <Link className={styles.menuItem} to={RoutesPath.ANALISE_PARTIDA}>
           Análise
           </Link> */}
-        <Link className={styles.menuItem} to={RoutesPath.PERFIL}>
+        {/* <Link className={styles.menuItem} to={RoutesPath.PERFIL}>
           Perfil
-        </Link>
+        </Link> */}
         <Link className={styles.menuItem} to={RoutesPath.JOGO_RESPONSAVEL}>
           Jogo Responsável
         </Link>

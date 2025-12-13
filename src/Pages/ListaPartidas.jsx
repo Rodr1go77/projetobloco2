@@ -133,12 +133,12 @@ export default function ListaPartidas() {
                 <Box sx={{ display: "flex", alignItems: "center", gap: 2, padding: 2 }}>
                   <Avatar
                     src={logos[match.teams.home.name]}
-                    sx={{ width: 50, height: 50, backgroundColor: "white", }}
+                    sx={{ padding: 1.5, width: 50, height: 50, backgroundColor: "white", border: "3px solid #064c91", "& img": { objectFit: "contain" } }}
                   />
-                  <ClearIcon sx={{ fontSize: 36, color: "#064c91" }} />
+                   <ClearIcon sx={{ fontSize: 36, color: "#064c91" }} />
                   <Avatar
                     src={logos[match.teams.away.name]}
-                    sx={{ width: 50, height: 50, backgroundColor: "white", }}
+                    sx={{ padding: 1.5, width: 50, height: 50, backgroundColor: "white", border: "3px solid #064c91", "& img": { objectFit: "contain" } }}
                   />
                 </Box>
 

@@ -5,7 +5,7 @@ import RoutesPath from "../routes/RoutesPath";
 
 export default function AuthLayout({ isAuthenticated, isLoadingAuth }) {
 
-  const dev_preview = false
+  const dev_preview = true
 
   if (isLoadingAuth === null) {
     return null; 

@@ -60,7 +60,7 @@
 .boxOdds {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: auto;
     padding: 12px;
     border: 2px solid #1976d2;
     border-radius: 4px;
@@ -69,7 +69,7 @@
 
 .oddsTitle {
     font-weight: bold !important;
-    color:  #064c91;
+    color: steelblue;
     font-size: 1.7rem !important;
     text-align: center;
     margin: 0;
@@ -95,6 +95,7 @@
     margin: 0px 0px 0px 0px;
     width: 100%;
     gap: 5px;
+    margin-bottom: 10px;
 }
 
 .boxTeamA,
@@ -146,12 +147,51 @@
 
 .boxInfo {
     display: flex;
+    height: auto;
     flex-direction: column;
     border: 2px solid #1976d2;
     border-radius: 8px;
     padding: 16px;
     background-color: white;
-    flex: 1;
+    height: auto;           
+    flex: 0 0 auto;  
+}
+
+.boxEventos {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    border: 2px solid #1976d2;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: white;
+    height: auto;           
+    flex: 0 0 auto;  
+}
+
+
+.boxServico {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    border: 2px solid #1976d2;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: white;
+    height: auto;        
+    flex: 0 0 auto;  
+}
+
+.boxEscalacoes {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    border: 2px solid #1976d2;
+    border-radius: 8px; 
+    padding: 16px;
+    background-color: white;
+    height: auto;        
+    flex: 0 0 auto;  
 }
 
 .boxPreview {
@@ -163,6 +203,9 @@
     background-color: white;
     flex: 1;
     margin-top: 100px;
+    height: auto;        
+    flex: 0 0 auto;  
+    margin-bottom: 10px;
 }
 
 .sectionTitle {
@@ -221,3 +264,23 @@
     padding-bottom: 16px;
 }
 
+.colunaEsquerda {
+    width: 60%;
+}
+
+.colunaDireita {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.linhaDuasCaixas {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.caixa20 {
+    width: 50%;
+}
