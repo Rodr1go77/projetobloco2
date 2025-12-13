@@ -31,6 +31,7 @@ export default function ListaPartidas() {
         setLoading(true);
         const response = await getMatches();
         const allMatches = response?.results ?? [];
+        console.log("Carregando LISTA de partidas...");
         setLeagueHeader(response.leagueHeader);
         const cutoffDate = toDate("01/12/2025");
         const validMatches = allMatches.filter((match) => {
@@ -93,8 +94,7 @@ export default function ListaPartidas() {
           className={styles.searchBar}
         /> */}
 
-        <Grid
-          id="containerTitulo"
+        <Grid id="containerTitulo"
           item
           xs={12}
           sm={12}

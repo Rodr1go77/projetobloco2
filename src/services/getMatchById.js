@@ -11,17 +11,13 @@ export async function getMatchById(match_id) {
         const data = await response.json();
 
         if (data.error) {
-            alert("Erro ao buscar detalhes da partida. Usando dados locais.");
-            return { fallback: true, result: matchLocal };
+            return { fallback: true, result: matchLocal, error: true };
         }
 
-        return { fallback: false, result: data };
+        return { fallback: false, result: data, error: false };
 
     } catch (error) {
-        alert("Erro ao conectar com a API. Usando dados locais.");
-        return { fallback: true, result: matchLocal };
+        return { fallback: true, result: matchLocal, error: true };
     }
 }
 
-
-// https://api.soccerdataapi.com/match/?match_id=961083&auth_token=2bdb4609569b5080a1163c48b598bf507fa222d3

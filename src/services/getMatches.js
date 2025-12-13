@@ -30,11 +30,9 @@ export async function getMatches() {
 
     const matches = data[0]?.stage?.[0]?.matches ?? []
 
-    return { fallback: false, leagueHeader, results: matches };
+    return { fallback: false, error: false, leagueHeader, results: matches };
 
   } catch (error) {
-    alert("Erro na API, usando dados locais:", error.message);
-
     const leagueHeader = {
       leagueName: localMatchesPremiere[0]?.league_name,
       seasonYear: localMatchesPremiere[0]?.season?.year
@@ -43,7 +41,7 @@ export async function getMatches() {
     const matchesLocal =
       localMatchesPremiere?.[0]?.stage?.[0]?.matches ?? [];
 
-    return { fallback: true, leagueHeader, results: matchesLocal };
+    return { fallback: true, error: true, leagueHeader, results: matchesLocal };
   }
 }
 
