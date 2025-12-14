@@ -1,4 +1,4 @@
-import { Grid, Typography, Card, Box, Avatar } from "../Components";
+import { Grid, Typography, Card, Box, Avatar, SearchBar } from "../Components";
 import { useEffect, useState } from "react";
 import { getMatches } from "../services/getMatches";
 import { useNavigate } from "react-router-dom";
@@ -12,18 +12,38 @@ export default function ListaPartidas() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [leagueHeader, setLeagueHeader] = useState(null);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const pageSize = 150;
   const navigate = useNavigate();
 
+
+  // pega nome do time
   const getTeamName = (team) => {
     if (!team || !team.name || team.name === "None") return "Não disponível";
     return team.name;
   };
 
+  // formata data
   const toDate = (dateStr) => {
     if (!dateStr) return null;
     const [d, m, y] = dateStr.split("/");
     return new Date(`${y}-${m}-${d}`);
   };
+
+  // filtro de dados
+  const filteredData = (matches ?? []).filter((item) => {
+    if (!search) return true;
+    const termo = search.toLowerCase();
+    return (
+      item.teams.home.name.toLowerCase().includes(termo) ||
+      item.teams.away.name.toLowerCase().includes(termo)
+    );
+  });
+
+  //
+  const visibleFilteredData = filteredData.slice(0, page * pageSize);
+
 
   useEffect(() => {
     async function loadMatches() {
@@ -90,9 +110,7 @@ export default function ListaPartidas() {
         spacing={2}
         className={styles.containerGeral}
       >
-        {/* <SearchBar
-          className={styles.searchBar}
-        /> */}
+
 
         <Grid id="containerTitulo"
           item
@@ -109,13 +127,21 @@ export default function ListaPartidas() {
 
         </Grid>
 
+        <SearchBar
+          className={styles.searchBar}
+          value={search}
+          onChange={(e) => {
+            setPage(1);
+            setSearch(e.target.value);
+          }} />
+
         <Grid
           id="containerCards"
           container
           spacing={2}
           className={styles.containerCards}
         >
-          {matches.map((match) => (
+          {visibleFilteredData.map((match) => (
             <Grid
               item
               xs={12}
@@ -135,7 +161,7 @@ export default function ListaPartidas() {
                     src={logos[match.teams.home.name]}
                     sx={{ padding: 1.5, width: 50, height: 50, backgroundColor: "white", border: "3px solid #064c91", "& img": { objectFit: "contain" } }}
                   />
-                   <ClearIcon sx={{ fontSize: 36, color: "#064c91" }} />
+                  <ClearIcon sx={{ fontSize: 36, color: "#064c91" }} />
                   <Avatar
                     src={logos[match.teams.away.name]}
                     sx={{ padding: 1.5, width: 50, height: 50, backgroundColor: "white", border: "3px solid #064c91", "& img": { objectFit: "contain" } }}

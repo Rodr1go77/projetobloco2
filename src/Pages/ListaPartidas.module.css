@@ -37,8 +37,8 @@
     padding: 12px;
     transition: 0.2s;
     cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 16px;
+    border: 2px solid #ccc!important;
+    border-radius: 16px!important;
     background-color: #AAC4F5 !important;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@
 
 .card:hover {
     transform: scale(1.05);
-    border: 1px solid #1976d2;
+    border: 2px solid #1976d2!important;
     background-color: #b8cef7 !important;
 }
 
@@ -66,9 +66,12 @@
 }
 
 .searchBar {
-    width: 93%;
+    width: 50%;
     padding: 8px;
-    margin: 8px;
+    margin: 4px;
+    background-color: white;
+    border: 1.5px solid #1976d2!important;
+    border-radius: 8px;
 }
 
 .boxData{

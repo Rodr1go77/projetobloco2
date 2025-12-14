@@ -121,13 +121,13 @@ export default function AnalisePartida() {
               <Box sx={{ display: "flex", alignItems: "center", margin: 1, gap: 1 }}>
 
                 <Avatar
-                  src={logos[previewData.teams.home.name]}
+                  src={logos[matchData.teams.home.name]}
                   sx={{ width: 80, padding: 0.8, height: 80, "& img": { objectFit: "contain" }, border: "3px solid #064c91" }}
                 />
                 <ClearIcon sx={{ fontSize: 26, color: "#064c91" }} />
 
                 <Avatar
-                  src={logos[previewData.teams.away.name]}
+                  src={logos[matchData.teams.away.name]}
                   sx={{ width: 80, padding: 1, height: 80, "& img": { objectFit: "contain" }, border: "3px solid #064c91" }}
                 />
 
@@ -227,7 +227,7 @@ export default function AnalisePartida() {
 
               <Paper className={`${styles.boxVencedor} ${styles.caixa20}`} elevation={2}>
 
-                <Typography variant="h5" sx={{ color: '#064c91' }}>
+                <Typography variant="h5" sx={{ color: 'steelblue', fontWeight: 'bold' }}>
                   Vencedor da Partida
                 </Typography>
 
