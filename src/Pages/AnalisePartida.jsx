@@ -209,15 +209,20 @@ export default function AnalisePartida() {
             <Box className={styles.linhaDuasCaixas}>
 
               <Paper className={`${styles.boxIA} ${styles.caixa20}`} elevation={2}>
+
+                <Box className={styles.boxIAContent}>
+
                 <Avatar src={logo1} className={styles.avatar}></Avatar>
-                <Typography variant="body1">Escolhas da IA para o jogo:</Typography>
-                <Divider />
-                <Typography variant="body1">
-                  Mercado: {previewData.match_data.prediction.type}
+                <Typography variant="body1" className={styles.boxIATitle}>Escolhas da IA para o jogo:</Typography>
+                <Divider className={styles.dividerIA} />
+                <Typography variant="body1" className={styles.boxIAText}>
+                  <strong>Mercado:</strong> {previewData.match_data.prediction.type}
                 </Typography>
-                <Typography variant="body1">
-                  Aposta: {previewData.match_data.prediction.choice} {previewData.match_data.prediction.total}
+                <Typography variant="body1" className={styles.boxIAText}>
+                  <strong>Aposta:</strong> {previewData.match_data.prediction.choice} {previewData.match_data.prediction.total}
                 </Typography>
+
+              </Box>
               </Paper>
 
               <Paper className={`${styles.boxVencedor} ${styles.caixa20}`} elevation={2}>
