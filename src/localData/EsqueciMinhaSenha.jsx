@@ -106,7 +106,6 @@ export default function EsqueciMinhaSenha() {
 
       <Grid
         id="containerTitulo"
-        item
         xs={12}
         sm={12}
         md={10}

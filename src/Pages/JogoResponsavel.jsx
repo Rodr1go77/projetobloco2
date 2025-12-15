@@ -9,7 +9,6 @@ export default function JogoResponsavel() {
     <>
       <Grid
         id="containerTitulo"
-        item
         xs={12}
         sm={12}
         md={10}

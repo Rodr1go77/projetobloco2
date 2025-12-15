@@ -84,13 +84,7 @@ export default function AnalisePartida() {
     <>
       {/* Container Título */}
       <Grid
-        id="containerTitulo"
-        item
-        xs={12}
-        sm={12}
-        md={10}
-        lg={8}
-        xl={6}
+        id="containerTitulo" 
         className={styles.containerTitulo}
       >
         <Typography className={styles.pageTitle}>
@@ -118,7 +112,7 @@ export default function AnalisePartida() {
 
             <Paper className={styles.boxPreview} elevation={2}>
 
-              <Box sx={{ display: "flex", alignItems: "center", margin: 1, gap: 1 }}>
+              <Box className={styles.previewAvatars} sx={{ display: "flex", alignItems: "center", margin: 1, gap: 1 }}>
 
                 <Avatar
                   src={logos[matchData.teams.home.name]}
@@ -139,12 +133,14 @@ export default function AnalisePartida() {
 
               <Typography variant="body2" color="text.secondary">
 
-                <Typography variant="body1">
+                <Typography variant="body1" component="span">
                   Previsão do Tempo: {previewData.match_data.weather.description}
                 </Typography>
-                <Typography variant="body1">
+                <br />
+                <Typography variant="body1" component="span">
                   Temperatura: {previewData.match_data.weather.temp_c}ºC
                 </Typography>
+                <br />
                 <br />
               </Typography>
 
@@ -202,7 +198,6 @@ export default function AnalisePartida() {
                   </ListItem>
                 ))}
               </List>
-
 
 
             </Paper>
