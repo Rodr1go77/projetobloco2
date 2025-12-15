@@ -49,7 +49,7 @@ export default function AnalisePartida() {
     return () => { isMounted = false };
   }, [id]);
 
-// Verifica se os dados da partida estão sendo carregados
+  // Verifica se os dados da partida estão sendo carregados
   if (loading) {
     return (
       <Typography variant="body1" sx={{ mt: 2 }}>
@@ -84,7 +84,7 @@ export default function AnalisePartida() {
     <>
       {/* Container Título */}
       <Grid
-        id="containerTitulo" 
+        id="containerTitulo"
         className={styles.containerTitulo}
       >
         <Typography className={styles.pageTitle}>
@@ -92,7 +92,7 @@ export default function AnalisePartida() {
         </Typography>
 
         <Typography className={styles.matchTitle}>
-          {matchData.teams.home.name} vs {matchData.teams.away.name}
+          {matchData?.teams?.home?.name || "Home ?"} vs {matchData?.teams?.away?.name || "Away ?"}
         </Typography>
 
       </Grid>
@@ -115,13 +115,13 @@ export default function AnalisePartida() {
               <Box className={styles.previewAvatars} sx={{ display: "flex", alignItems: "center", margin: 1, gap: 1 }}>
 
                 <Avatar
-                  src={logos[matchData.teams.home.name]}
+                  src={logos[matchData?.teams?.home?.name] || logo1}
                   sx={{ width: 80, padding: 0.8, height: 80, "& img": { objectFit: "contain" }, border: "3px solid #064c91" }}
                 />
                 <ClearIcon sx={{ fontSize: 26, color: "#064c91" }} />
 
                 <Avatar
-                  src={logos[matchData.teams.away.name]}
+                  src={logos[matchData?.teams?.away?.name] || logo1}
                   sx={{ width: 80, padding: 1, height: 80, "& img": { objectFit: "contain" }, border: "3px solid #064c91" }}
                 />
 
@@ -134,46 +134,46 @@ export default function AnalisePartida() {
               <Typography variant="body2" color="text.secondary">
 
                 <Typography variant="body1" component="span">
-                  Previsão do Tempo: {previewData.match_data.weather.description}
+                  Previsão do Tempo: {previewData?.match_data?.weather?.description || "-"}
                 </Typography>
                 <br />
                 <Typography variant="body1" component="span">
-                  Temperatura: {previewData.match_data.weather.temp_c}ºC
+                  Temperatura: {previewData?.match_data?.weather?.temp_c || "-"}ºC
                 </Typography>
                 <br />
                 <br />
               </Typography>
 
               <Typography variant="body1" color="text.secondary" sx={{ fontWeight: "bold", textAlign: "justify" }}>
-                {previewData.preview_content[0].content}
+                {previewData?.preview_content?.[0].content || "-"}
               </Typography>
               <br />
               <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                {previewData.preview_content[1].content}
+                {previewData?.preview_content?.[1].content || "-"}
               </Typography>
               <br />
               <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                {previewData.preview_content[2].content}
+                {previewData?.preview_content?.[2].content || "-"}
               </Typography>
               <br />
               <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                {previewData.preview_content[3].content}
+                {previewData?.preview_content?.[3].content || "-"}
               </Typography>
               <br />
               <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                {previewData.preview_content[4].content}
+                {previewData?.preview_content?.[4].content || "-"}
               </Typography>
               <br />
               <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                {previewData.preview_content[5].content}
+                {previewData?.preview_content?.[5].content || "-"}
               </Typography>
               <br />
               <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                {previewData.preview_content[6].content}
+                {previewData?.preview_content?.[6].content || "-"}
               </Typography>
               <br />
               <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                {previewData.preview_content[7].content}
+                {previewData?.preview_content?.[7].content || "-"}
               </Typography>
 
 
@@ -230,9 +230,9 @@ export default function AnalisePartida() {
                   {matchData.status !== "finished"
                     ? "Partida não realizada"
                     : matchData.winner === "home"
-                      ? matchData.teams.home.name
+                      ? matchData?.teams?.home?.name || "Home"
                       : matchData.winner === "away"
-                        ? matchData.teams.away.name
+                        ? matchData?.teams?.away?.name || "Away"
                         : matchData.winner === "draw"
                           ? "Empate"
                           : "Erro"
@@ -240,24 +240,13 @@ export default function AnalisePartida() {
                   <br />
                 </Typography>
 
-                <Avatar
+                <Avatar className={styles.avatarEscudo}
                   src={matchData.winner === "home"
-                    ? logos[matchData.teams.home.name]
+                    ? logos[matchData?.teams?.home?.name]
                     : matchData.winner === "away"
-                      ? logos[matchData.teams.away.name]
-                      : "Empate"
+                      ? logos[matchData?.teams?.away?.name]
+                      : undefined
                   }
-
-                  sx={{
-                    width: 120,
-                    p: 1,
-                    height: 120,
-                    backgroundColor: "white",
-                    objectFit: "contain",
-                    boxShadow: `0px 3px 5px rgba(0,0,0,0.2),
-                0px 3px 5px rgba(0,0,0,0.14),
-                0px 3px 5px rgba(0,0,0,0.12)`,
-                  }}
                 />
 
               </Paper>
@@ -277,7 +266,7 @@ export default function AnalisePartida() {
               <Box className={styles.teamsRow}>
                 <Box className={styles.boxTeamA}>
                   <Typography variant="h5" sx={{ pb: 1 }}>
-                    {matchData.teams.home.name}
+                    {matchData?.teams?.home?.name || "Home"}
                   </Typography>
                 </Box>
                 <Box className={styles.boxDraw}>
@@ -287,7 +276,7 @@ export default function AnalisePartida() {
                 </Box>
                 <Box className={styles.boxTeamB}>
                   <Typography variant="h5" sx={{ pb: 1 }}>
-                    {matchData.teams.away.name}
+                    {matchData?.teams?.away?.name || "Away"}
                   </Typography>
                 </Box>
               </Box>
@@ -295,17 +284,17 @@ export default function AnalisePartida() {
               <Box className={styles.oddsRow}>
                 <Box className={styles.boxOddsTeamA}>
                   <Typography variant="h5" >
-                    {matchData.odds.match_winner.home}
+                    {matchData?.odds?.match_winner?.home || "-"}
                   </Typography>
                 </Box>
                 <Box className={styles.boxOddsDraw}>
                   <Typography variant="h5">
-                    {matchData.odds.match_winner.draw}
+                    {matchData?.odds?.match_winner?.draw || "-"}
                   </Typography>
                 </Box>
                 <Box className={styles.boxOddsTeamB}>
                   <Typography variant="h5" >
-                    {matchData.odds.match_winner.away}
+                    {matchData?.odds?.match_winner?.away || "-"}
                   </Typography>
                 </Box>
               </Box>
@@ -344,7 +333,7 @@ export default function AnalisePartida() {
                 sx={{ fontWeight: 'bold' }}
 
               >
-                {matchData.teams.home.name}
+                {matchData?.teams?.home?.name || "-"}
               </Divider>
 
               {lineups?.home?.map((p) => (
@@ -357,7 +346,7 @@ export default function AnalisePartida() {
                 textAlign="center"
                 sx={{ fontWeight: 'bold' }}
               >
-                {matchData.teams.away.name}
+                {matchData?.teams?.away?.name || "-"}
               </Divider>
 
               {lineups?.away?.map((p) => (
